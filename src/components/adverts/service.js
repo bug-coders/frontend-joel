@@ -1,6 +1,6 @@
 import client from '../../api/client.js';
 
-const advertsUrl = '/v1/adverts';
+const advertsUrl = '/anuncios';
 
 export const getAdverts = () => {
   const url = advertsUrl;
