@@ -36,7 +36,7 @@ export function auth(state = defaultState.auth, action) {
 export function adverts(state = defaultState.adverts, action) {
   switch (action.type) {
     case ADVERTS_LOADED_SUCCESS:
-      return { ...state, areLoaded: true, data: action.payload };
+      return { ...state, areLoaded: true, data: action.payload.result.rows };
     case ADVERT_LOADED_SUCCESS:
       return { ...state, data: [action.payload] };
     case ADVERT_CREATED_SUCCESS:
