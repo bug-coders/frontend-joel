@@ -52,8 +52,8 @@ const AdvertsPage = ({ onLogout }) => {
                 </div>
               )}
               {filteredAdverts.reverse().map((advert) => (
-                <li key={advert.id}>
-                  <Link className="advert-detail-link" to={`/adverts/${advert.id}`}>
+                <li key={advert._id}>
+                  <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
                     <ul className="advert-container">
                       <li>
                         <strong>{advert.name}</strong>

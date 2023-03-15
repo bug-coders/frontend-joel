@@ -45,7 +45,7 @@ export function adverts(state = defaultState.adverts, action) {
       const deletedAdvertList = state.data.filter((advert) => advert.id !== action.payload.id);
       return { ...state, data: deletedAdvertList };
     case API_TAGS_LOADED_SUCCESS:
-      return { ...state, apiTags: action.payload };
+      return { ...state, apiTags: action.payload.result };
     default:
       return state;
   }
