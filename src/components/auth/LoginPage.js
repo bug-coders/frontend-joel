@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { authLogin, uiResetError } from '../../store/actions.js';
@@ -70,6 +70,11 @@ const LoginPage = ({ onLogin, ...props }) => {
         <div className="submit-form">
           <button type="submit" disabled={!isButtonEnabled()}>
             Login
+          </button>
+          <button>
+          <NavLink to="/registrar" className="button-log">
+            Registrar usuario
+          </NavLink>
           </button>
         </div>
       </form>
