@@ -23,6 +23,9 @@ const Layout = ({ children, onLogout, ...props }) => {
           <NavLink className="navlinks" to="/adverts/new">
             Crear Anuncio
           </NavLink>
+          <NavLink to="/registrar" className="button-log">
+            Registrar usuario
+          </NavLink>
         </div>
         <div className="header-logout">
           {confirmLogout && (

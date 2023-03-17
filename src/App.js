@@ -6,6 +6,7 @@ import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import AdvertPage from './components/adverts/AdvertPage.js';
 import NewAdvertPage from './components/adverts/NewAdvertPage.js';
 import RequireAuth from './components/auth/RequireAuth.js';
+import CreateUser from './components/auth/CreateUser';
 import Layout from './components/layout/Layout.js';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -51,6 +52,8 @@ function App() {
           }
         />
         <Route path="/" element={<Navigate to="/adverts" />} />
+        
+				<Route path='/registrar' element={<CreateUser />} />
 
         <Route
           path="/404"
