@@ -58,7 +58,7 @@ const NewAdvertPage = ({ onLogout }) => {
       photo && formData.append('photo', photo);
 
       const createdAdvert = await dispatch(advertCreate(formData));
-      navigate(`/adverts/${createdAdvert.id}`);
+      navigate(`/adverts/${createdAdvert._id}`);
     } catch (error) {
       if (error.status === 401) {
         navigate('/login');
