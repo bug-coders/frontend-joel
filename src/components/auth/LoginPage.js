@@ -68,10 +68,10 @@ const LoginPage = ({ onLogin, ...props }) => {
           />
         </div>
         <div className="submit-form">
-          <button type="submit" disabled={!isButtonEnabled()}>
+          <button type="submit" className="button" disabled={!isButtonEnabled()}>
             Login
           </button>
-          <button>
+          <button className="button">
           <NavLink to="/registrar" className="button-log">
             Registrar usuario
           </NavLink>

@@ -74,7 +74,9 @@ const CreateUser = () => {
       <button type="submit" className="button" disabled={loading}>
         {loading ? "Loading..." : "Register"}
       </button>
-      <NavLink className="nav-link" to="/">Pagina principal</NavLink>
+      <button className="button">
+        <NavLink className="nav-link" to="/">¥ Volver ¥</NavLink>
+      </button>
     </form>
   );
 };
