@@ -197,7 +197,7 @@ export const advertDelete = (id) => {
     try {
       dispatch(advertDeletedRequest());
       await api.adverts.deleteAdvertById(id);
-      const advert = getState().adverts.data.find((advert) => advert.id === id);
+      const advert = getState().adverts.data.find((advert) => advert._id === id);
       dispatch(advertDeletedSuccess(advert));
     } catch (error) {
       dispatch(advertDeletedFailure(error));

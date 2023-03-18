@@ -77,7 +77,14 @@ const NewAdvertPage = ({ onLogout }) => {
             <div className="adverts-create">
               <div>
                 <label htmlFor="Name">Nombre</label>
-                <input type="text" name="Name" id="Name" onChange={handleChangeName} value={name} />
+                <input
+                  type="text"
+                  name="Name"
+                  id="Name"
+                  onChange={handleChangeName}
+                  value={name}
+                  autoFocus
+                />
               </div>
 
               <div>
