@@ -28,7 +28,7 @@ export const registerUser = createAsyncThunk(
           "Content-Type": "application/json",
         },
       };
-      await client.post(`/api/register`, { name, email, password }, config);
+      await client.post(`/register`, { name, email, password }, config);
       const rememberMe = true;
       const token = await login({ name, password, rememberMe });
       return token;

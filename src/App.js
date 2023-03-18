@@ -53,7 +53,7 @@ function App() {
         />
         <Route path="/" element={<Navigate to="/adverts" />} />
         
-				<Route path='/registrar' element={<CreateUser />} />
+				<Route path='/registro' element={<CreateUser />} />
 
         <Route
           path="/404"

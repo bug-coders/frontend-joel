@@ -72,10 +72,10 @@ const CreateUser = () => {
       {error && <Error>{error}</Error>}
       {customError && <Error>{customError}</Error>}
       <button type="submit" className="button" disabled={loading}>
-        {loading ? "Loading..." : "Register"}
+        {loading ? "Loading..." : "Registrar"}
       </button>
       <button className="button">
-        <NavLink className="nav-link" to="/">¥ Volver ¥</NavLink>
+        <NavLink className="navlinks" to="/">¥ Volver ¥</NavLink>
       </button>
     </form>
   );
