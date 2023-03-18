@@ -77,7 +77,7 @@ const AdvertPage = ({ onLogout }) => {
           )}
           <div className="delete-button">
             {!deleteAd && <button onClick={askDeleteAd}>Borrar anuncio</button>}
-            {deleteAd && (
+            {deleteAd && !deletedAd && (
               <div className="delete-confirmation">
                 <p> ¿Seguro? No podrás recuperar este anuncio.</p>
                 <div>

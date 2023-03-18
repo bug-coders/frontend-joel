@@ -43,7 +43,6 @@ export function adverts(state = defaultState.adverts, action) {
       return { ...state, data: [...state.data, action.payload] };
     case ADVERT_DELETED_SUCCESS:
       const deletedAdvertList = state.data.filter((advert) => {
-        console.log(advert._id);
         return advert._id !== action.payload._id;
       });
       return { ...state, data: deletedAdvertList };
