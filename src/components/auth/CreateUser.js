@@ -35,10 +35,10 @@ const CreateUser = () => {
 
       <div className="form-group">
         <input
-          type="text"
+          type="name"
           className="form-input"
           placeholder={"Nombre"}
-          {...register("nombre")}
+          {...register("name")}
           required
         />
       </div>

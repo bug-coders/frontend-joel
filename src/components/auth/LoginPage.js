@@ -72,7 +72,7 @@ const LoginPage = ({ onLogin, ...props }) => {
             Login
           </button>
           <button className="button">
-          <NavLink to="/registrar">
+          <NavLink to="/registro">
             Registrar usuario
           </NavLink>
           </button>
