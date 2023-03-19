@@ -64,7 +64,12 @@ const AdvertPage = ({ onLogout }) => {
                   )}
                 </div>
                 {advert.photo && (
-                  <img width="50%" className="photo-container" src={advert.photo} alt="Product" />
+                  <img
+                    width="50%"
+                    className="photo-container"
+                    src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
+                    alt="Product"
+                  />
                 )}
               </li>
               <li>
