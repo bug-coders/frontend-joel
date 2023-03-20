@@ -77,12 +77,13 @@ const AdvertsPage = ({ onLogout }) => {
                         alt="No hay foto"
                       />
                     )}
+                    <li>{forSale(advert.sale)}</li>
+
                     <li>
                       <strong>{advert.name}</strong>
                     </li>
-                    <li>{forSale(advert.sale)}</li>
-                    <li>Precio: {advert.price}€</li>
-                    <li>Tags: {advert.tags && advert.tags.join(', ')}</li>
+                    <li>{advert.price}€</li>
+                    <li>Categoría/s: {advert.tags && advert.tags.join(', ')}</li>
                   </ul>
                 </Link>
               </li>

@@ -67,12 +67,14 @@ const AdvertPage = ({ onLogout }) => {
               ) : (
                 <img width="50%" className="photo-container-lista" src={broken} alt="No hay foto" />
               )}
+              <li>{forSale(advert.sale)}</li>
+
               <li>
                 <strong>{advert.name}</strong>
               </li>
-              <li>{forSale(advert.sale)}</li>
-              <li>Precio: {advert.price}€</li>
-              <li>Tags: {advert.tags ? advert.tags.join(', ') : advert.tags}</li>
+
+              <li>{advert.price}€</li>
+              <li>Categoría/s: {advert.tags ? advert.tags.join(', ') : advert.tags}</li>
             </ul>
           )}
           <div className="delete-button">
