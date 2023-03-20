@@ -10,7 +10,6 @@ import { getAdvertsRedux } from '../../store/selectors.js';
 
 const AdvertsPage = ({ onLogout }) => {
   const adverts = useSelector(getAdvertsRedux) || [];
-  console.log('🚀 ~ file: AdvertsPage.js:13 ~ AdvertsPage ~ adverts:', adverts);
   const [filters, setFilters] = useState([]);
   const dispatch = useDispatch();
 

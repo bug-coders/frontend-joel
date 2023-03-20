@@ -12,7 +12,6 @@ const AdvertPage = ({ onLogout }) => {
   const { id } = useParams();
 
   const advert = useSelector(getAdvertByIdRedux(id)) || {};
-  console.log('🚀 ~ file: AdvertPage.js:14 ~ AdvertPage ~ advert:', advert);
   const dispatch = useDispatch();
   const [deleteAd, setDeleteAd] = useState(false);
   const [deletedAd, setDeletedAd] = useState(false);
