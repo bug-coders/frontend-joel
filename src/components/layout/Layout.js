@@ -49,7 +49,7 @@ const Layout = ({ children, onLogout, ...props }) => {
           )}
         </div>
       </header>
-      <bodyhead className="bodyHead">
+      <div className="bodyHead">
         <div className="header-navbar-mob">
           <details class="lista-detalle">
             <summary>=🏠=</summary>
@@ -76,7 +76,7 @@ const Layout = ({ children, onLogout, ...props }) => {
             </ul>
           </details>
         </div>
-      </bodyhead>
+      </div>
       {children}
       <footer className="footer">
         <div>
