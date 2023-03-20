@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import iconT from '../../assets/icons/Twitter.png';
-import iconF from '../../assets/icons/Facebook.png';
-import iconI from '../../assets/icons/Instagram.png';
-import './Layout.css';
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import iconT from "../../assets/icons/Twitter.png";
+import iconF from "../../assets/icons/Facebook.png";
+import iconI from "../../assets/icons/Instagram.png";
+
+import Button from "../Button";
+import "./Layout.css";
 
 const Layout = ({ children, onLogout, ...props }) => {
   const [confirmLogout, setConfirmLogout] = useState(false);
@@ -15,7 +17,7 @@ const Layout = ({ children, onLogout, ...props }) => {
     <div>
       <header className="header">
         <div>
-          <Link className="header-logo" to="/adverts" >
+          <Link className="header-logo" to="/adverts">
             <strong>WAKAPOP</strong>
           </Link>
         </div>
@@ -33,30 +35,74 @@ const Layout = ({ children, onLogout, ...props }) => {
         <div className="header-logout">
           {confirmLogout && (
             <div>
-              ¿Seguro que hacer logout?{' '}
+              ¿Seguro que hacer logout?{" "}
               <div>
-                <button onClick={onLogout}>Sí</button>
+                <Button onClick={onLogout}>Sí</Button>
               </div>
               <div>
-                <button onClick={askLogoutConfirmation}>No</button>
+                <Button onClick={askLogoutConfirmation}>No</Button>
               </div>
             </div>
           )}
-          {!confirmLogout && <button onClick={askLogoutConfirmation}>Logout</button>}
+          {!confirmLogout && (
+            <Button onClick={askLogoutConfirmation}>Logout</Button>
+          )}
         </div>
       </header>
+      <bodyhead className="bodyHead">
+        <div className="header-navbar-mob">
+          <details class="lista-detalle">
+            <summary>=🏠=</summary>
+            <ul>
+              <li>
+                <NavLink className="navlinks" to="/adverts" end>
+                  Listado de Anuncios
+                </NavLink>
+              </li>
+              <li></li>
+
+              <li>
+                <NavLink className="navlinks" to="/adverts/new">
+                  Crear Anuncio
+                </NavLink>
+              </li>
+
+              <li></li>
+              <li>
+                <NavLink to="/registrar" className="navlinks">
+                  Registrar usuario
+                </NavLink>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </bodyhead>
       {children}
       <footer className="footer">
-            <div>
-                <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer">
-                  <img class="iconFoot" src={iconT} alt="twitter logo"/></a>
-            </div>
-            <div>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img class="iconFoot" src={iconI} alt="instagram"/></a>
-            </div>
-            <div>
-                <a href="https://es-es.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="iconFoot" src={iconF} alt="Facebook"/></a>
-            </div>
+        <div>
+          <a
+            href="https://twitter.com/?lang=es"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img class="iconFoot" src={iconT} alt="twitter logo" />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img class="iconFoot" src={iconI} alt="instagram" />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://es-es.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img class="iconFoot" src={iconF} alt="Facebook" />
+          </a>
+        </div>
       </footer>
     </div>
   );

@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import './LoginPage.css';
+
+import "./LoginPage.css";
+
+import Button from "../Button";
 import { useDispatch, useSelector } from 'react-redux';
 import { authLogin, uiResetError } from '../../store/actions.js';
 import { getUi } from '../../store/selectors.js';
@@ -32,32 +35,37 @@ const LoginPage = ({ onLogin, ...props }) => {
   const isButtonEnabled = () => email.length && password.length && !isLoading;
 
   return (
-    <div className="form-page-container">
-      <h1>Bienvenido@ a Wakapop</h1>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="email-form">
-          <label htmlFor="email">Email</label>
+    <div className="loginPage">
+      <h1 className="loginPageTitle">Bienvenido@ a Wakapop</h1>
+      <h4 className="loginPageTitle">
+        Has login para acceder a los anuncios
+      </h4>
+      <form className="loginPage__form" onSubmit={handleSubmit}>
+        <div className="loginForm-field">
+          <label className="logLabl" htmlFor="email">Email</label>
           <input
             type="email"
             name="email"
             id="email"
+            className="loginput"
             onChange={handleChangeEmail}
             value={email}
             autoFocus
           />
         </div>
-        <div className="password-form">
-          <label htmlFor="password">Contraseña</label>
+        <div className="loginForm-field">
+          <label className="logLabl" htmlFor="password">Contraseña</label>
           <input
             id="password"
             type="password"
             name="password"
+            className="loginput"
             onChange={handleChangePassword}
             value={password}
           />
         </div>
 
-        <div className="rememberMe-form">
+        <div className="loginForm-field">
           <label htmlFor="rememberMe">Recuérdame</label>
           <input
             type="checkbox"
@@ -68,9 +76,9 @@ const LoginPage = ({ onLogin, ...props }) => {
           />
         </div>
         <div className="submit-form">
-          <button type="submit" className="button" disabled={!isButtonEnabled()}>
+          <Button type="submit" className="button" disabled={!isButtonEnabled()}>
             Login
-          </button>
+          </Button>
           <button className="button">
           <NavLink to="/registrar">
             Registrar usuario

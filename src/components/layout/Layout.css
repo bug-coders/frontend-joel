@@ -17,10 +17,31 @@ body{
   align-items: end;
 }
 
+
+
 .header-logo {
   text-decoration: none;
   color: black;
   text-decoration: solid;
+}
+
+.header-navbar-mob{
+  padding-bottom: 25px;
+  margin: 6px;
+  display: flex;
+  justify-content:flex-start;
+
+}
+
+.lista-detalle{
+  width: 100%;
+    border: 1px solid #96d1f8;
+    background: #65a9d731;   
+    padding: 5px 10px;
+    border-radius: 8px;    
+    color: rgb(5, 4, 59);
+    margin: 0px;
+    z-index: 1;
 }
 
 .footer {
@@ -76,6 +97,10 @@ body{
       animation-iteration-count: infinite;
   }
 
+  .header-navbar-mob{
+    display:none;
+}
+
   
 @keyframes bounce {
 
@@ -83,4 +108,13 @@ body{
   10%, 30% {transform: translateY(-10px);}
   50% {transform: translateY(-5px);}
 }
+}
+
+@media screen and (max-width: 549px) {
+  .header-navbar{
+      display:none;
+  }
+  .container-logo{
+      margin-right: 30%; 
+  }
 }

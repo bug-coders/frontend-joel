@@ -12,3 +12,93 @@ form div {
 label {
   margin-right: 10px;
 }
+
+.loginForm__field {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginForm__submit {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.loginPageTitle{
+  color: aliceblue;
+}
+
+.loginPage {
+  display: block;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  max-width: 600px;
+  padding: 0 15px;
+  width: 45%;
+}
+
+.loginPageTitle {
+  color: aliceblue;
+  align-items: center;
+  display: flex;
+  height: 64px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+  .loginPage__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(95, 193, 206);
+    border-radius: 20px;
+  }
+span {
+  width: 300px;
+}
+  
+  .loginForm__field {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    
+  }
+  
+  .loginForm__submit {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .loginForm-field {
+    padding: 10px 0;
+  }
+  
+
+  .footer {
+    bottom: 0px;
+    text-align: center;
+    height: 30px;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(99, 255, 234);
+}
+
+@media screen and (max-width: 400px) {
+  .loginPage {
+    width: 75%;
+  }
+
+  .logLabl{
+    width:100%;
+    margin: 80px 80px 80px 80px
+  }
+
+  .loginput{
+    font-size: x-large;
+    margin: 5px;
+  }
+}
+
