@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import iconT from "../../assets/icons/Twitter.png";
-import iconF from "../../assets/icons/Facebook.png";
-import iconI from "../../assets/icons/Instagram.png";
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import iconT from '../../assets/icons/Twitter.png';
+import iconF from '../../assets/icons/Facebook.png';
+import iconI from '../../assets/icons/Instagram.png';
 
-import Button from "../Button";
-import "./Layout.css";
+import Button from '../Button';
+import './Layout.css';
 
 const Layout = ({ children, onLogout, ...props }) => {
   const [confirmLogout, setConfirmLogout] = useState(false);
@@ -35,7 +35,7 @@ const Layout = ({ children, onLogout, ...props }) => {
         <div className="header-logout">
           {confirmLogout && (
             <div>
-              ¿Seguro que hacer logout?{" "}
+              ¿Seguro que hacer logout?{' '}
               <div>
                 <Button onClick={onLogout}>Sí</Button>
               </div>
@@ -44,14 +44,12 @@ const Layout = ({ children, onLogout, ...props }) => {
               </div>
             </div>
           )}
-          {!confirmLogout && (
-            <Button onClick={askLogoutConfirmation}>Logout</Button>
-          )}
+          {!confirmLogout && <Button onClick={askLogoutConfirmation}>Logout</Button>}
         </div>
       </header>
       <div className="bodyHead">
         <div className="header-navbar-mob">
-          <details class="lista-detalle">
+          <details className="lista-detalle">
             <summary>=🏠=</summary>
             <ul>
               <li>
@@ -80,27 +78,18 @@ const Layout = ({ children, onLogout, ...props }) => {
       {children}
       <footer className="footer">
         <div>
-          <a
-            href="https://twitter.com/?lang=es"
-            target="_blank"
-            rel="noopener noreferrer">
-            <img class="iconFoot" src={iconT} alt="twitter logo" />
+          <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer">
+            <img className="iconFoot" src={iconT} alt="twitter logo" />
           </a>
         </div>
         <div>
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <img class="iconFoot" src={iconI} alt="instagram" />
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <img className="iconFoot" src={iconI} alt="instagram" />
           </a>
         </div>
         <div>
-          <a
-            href="https://es-es.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <img class="iconFoot" src={iconF} alt="Facebook" />
+          <a href="https://es-es.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <img className="iconFoot" src={iconF} alt="Facebook" />
           </a>
         </div>
       </footer>
