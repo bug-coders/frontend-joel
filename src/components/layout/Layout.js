@@ -18,7 +18,7 @@ const Layout = ({ children, onLogout, ...props }) => {
       <header className="header">
         <div>
           <Link className="header-logo" to="/adverts">
-            <strong>WUZIK</strong>
+            <strong>WuzikU</strong>
           </Link>
         </div>
         <div className="header-navbar">
