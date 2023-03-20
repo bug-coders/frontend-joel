@@ -34,7 +34,7 @@ const AdvertsPage = ({ onLogout }) => {
         (filters[1] === '' || filters[1] === advert.sale) &&
         (filters[2] === '' || filters[2] <= advert.price) &&
         (filters[3] === '' || filters[3] >= advert.price) &&
-        (!filters[4].length || JSON.stringify(filters[4]) === JSON.stringify(advert.tags)))
+        (!filters[4].length || filters[4].every((tag) => advert.tags.includes(tag))))
     );
   });
 

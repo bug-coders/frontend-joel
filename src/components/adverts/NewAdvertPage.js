@@ -16,6 +16,7 @@ const NewAdvertPage = ({ onLogout }) => {
   const { isLoading } = useSelector(getUi);
 
   const formData = new FormData();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
