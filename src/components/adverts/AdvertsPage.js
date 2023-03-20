@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout.js';
 import './AdvertsPage.css';
 import { Link } from 'react-router-dom';
+import broken from '../../assets/broken-1.png';
 import Filters from './Filters.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { advertsLoad } from '../../store/actions.js';
@@ -39,21 +40,43 @@ const AdvertsPage = ({ onLogout }) => {
 
   return (
     <Layout onLogout={onLogout}>
-      <div className="advertsPage">
+      <div classname="filterList">
+        <h1>Listado de anuncios</h1>
+        <Filters getAdvertsFilter={getAdvertsFilter} />
+        
+          {filteredAdverts.length === 0 && (
+            <div>
+              No hay anuncios que cumplan con esos requisitos. Modifica los filtros o{' '}
+              <Link to="/adverts/new">publica un anuncio.</Link>
+            </div>
+          )}
+
+      </div>
+      <div >
         {adverts.length ? (
           <div>
-            <h1>Listado de anuncios</h1>
-            <Filters getAdvertsFilter={getAdvertsFilter} />
-            <ul>
-              {filteredAdverts.length === 0 && (
-                <div>
-                  No hay anuncios que cumplan con esos requisitos. Modifica los filtros o{' '}
-                  <Link to="/adverts/new">publica un anuncio.</Link>
-                </div>
-              )}
+            <ul className="adsGrid">
               {filteredAdverts.reverse().map((advert) => (
                 <li key={advert._id}>
                   <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
+                  <li>
+                  {!advert.photo && (
+                      <img
+                        width="50%"
+                        className="photo-container-lista"
+                        src={broken}
+                        alt="No hay foto"
+                      />
+                  )}
+                {advert.photo && (
+                  <img
+                    width="50%"
+                    className="photo-container-lista"
+                    src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
+                    alt="Product"
+                  />
+                )}
+                  </li>
                     <ul className="advert-container">
                       <li>
                         <strong>{advert.name}</strong>

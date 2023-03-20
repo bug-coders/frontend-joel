@@ -20,8 +20,21 @@ ul {
   border-radius: 20px;
 }
 
+.adsGrid{
+    width: 100%;
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+    padding: 1.5rem;
+    background-color: rgba(223, 199, 243, 0.39);
+}
+
 .photo-container {
   border-radius: 25px;
+}
+
+.photo-container-lista{
+  width: 85px;
 }
 
 .delete-button {
