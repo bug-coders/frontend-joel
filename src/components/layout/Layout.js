@@ -57,7 +57,6 @@ const Layout = ({ children, onLogout, ...props }) => {
                   Listado de Anuncios
                 </NavLink>
               </li>
-              <li></li>
 
               <li>
                 <NavLink className="navlinks" to="/adverts/new">
@@ -65,7 +64,6 @@ const Layout = ({ children, onLogout, ...props }) => {
                 </NavLink>
               </li>
 
-              <li></li>
               <li>
                 <NavLink to="/registrar" className="navlinks">
                   Registrar usuario
