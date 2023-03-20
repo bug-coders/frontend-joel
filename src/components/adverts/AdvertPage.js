@@ -11,7 +11,7 @@ import broken from '../../assets/broken-1.png';
 const AdvertPage = ({ onLogout }) => {
   const { id } = useParams();
 
-  const advert = useSelector(getAdvertByIdRedux(id)) || [];
+  const advert = useSelector(getAdvertByIdRedux(id)) || {};
   console.log('🚀 ~ file: AdvertPage.js:14 ~ AdvertPage ~ advert:', advert);
   const dispatch = useDispatch();
   const [deleteAd, setDeleteAd] = useState(false);
@@ -52,7 +52,7 @@ const AdvertPage = ({ onLogout }) => {
           <h1>Detalle del anuncio</h1>
           {!deletedAd && (
             <ul className="advert-container">
-              {advert.photo.length > 0 ? (
+              {advert.photo && Object.entries(advert.photo).length > 0 ? (
                 <img
                   width="50%"
                   className="photo-container-lista"
