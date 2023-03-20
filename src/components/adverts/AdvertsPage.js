@@ -58,7 +58,7 @@ const AdvertsPage = ({ onLogout }) => {
               <li key={advert._id}>
                 <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
                   <ul className="advert-container">
-                    {advert.photo.length > 0 ? (
+                    {advert.photo.length > 0 && advert.photo[0].filename ? (
                       <img
                         width="50%"
                         className="photo-container-lista"
