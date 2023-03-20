@@ -59,6 +59,10 @@ const AdvertPage = ({ onLogout }) => {
                   className="photo-container-lista"
                   src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
                   alt="Product"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = broken;
+                  }}
                 />
               ) : (
                 <img width="50%" className="photo-container-lista" src={broken} alt="No hay foto" />
