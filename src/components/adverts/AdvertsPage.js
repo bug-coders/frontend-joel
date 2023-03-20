@@ -9,7 +9,8 @@ import { advertsLoad } from '../../store/actions.js';
 import { getAdvertsRedux } from '../../store/selectors.js';
 
 const AdvertsPage = ({ onLogout }) => {
-  const adverts = useSelector(getAdvertsRedux);
+  const adverts = useSelector(getAdvertsRedux) || [];
+  console.log('🚀 ~ file: AdvertsPage.js:13 ~ AdvertsPage ~ adverts:', adverts);
   const [filters, setFilters] = useState([]);
   const dispatch = useDispatch();
 
@@ -58,20 +59,19 @@ const AdvertsPage = ({ onLogout }) => {
               <li key={advert._id}>
                 <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
                   <ul className="advert-container">
-                    {!advert.photo && (
-                      <img
-                        width="50%"
-                        className="photo-container-lista"
-                        src={broken}
-                        alt="No hay foto"
-                      />
-                    )}
-                    {advert.photo && (
+                    {advert.photo.length > 0 ? (
                       <img
                         width="50%"
                         className="photo-container-lista"
                         src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
                         alt="Product"
+                      />
+                    ) : (
+                      <img
+                        width="50%"
+                        className="photo-container-lista"
+                        src={broken}
+                        alt="No hay foto"
                       />
                     )}
                     <li>

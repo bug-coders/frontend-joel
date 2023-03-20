@@ -6,11 +6,13 @@ import '../../assets/broken-1.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdvertByIdRedux } from '../../store/selectors.js';
 import { advertDelete, advertLoad } from '../../store/actions.js';
+import broken from '../../assets/broken-1.png';
 
 const AdvertPage = ({ onLogout }) => {
   const { id } = useParams();
 
-  const advert = useSelector(getAdvertByIdRedux(id)) || {};
+  const advert = useSelector(getAdvertByIdRedux(id)) || [];
+  console.log('🚀 ~ file: AdvertPage.js:14 ~ AdvertPage ~ advert:', advert);
   const dispatch = useDispatch();
   const [deleteAd, setDeleteAd] = useState(false);
   const [deletedAd, setDeletedAd] = useState(false);
@@ -50,28 +52,16 @@ const AdvertPage = ({ onLogout }) => {
           <h1>Detalle del anuncio</h1>
           {!deletedAd && (
             <ul className="advert-container">
-              <li>
-                <div>
-                  {!advert.photo && (
-                    <div>
-                      <img
-                        width="50%"
-                        className="photo-container"
-                        src={require('../../assets/broken-1.png')}
-                        alt="No hay foto"
-                      />
-                    </div>
-                  )}
-                </div>
-                {advert.photo && (
-                  <img
-                    width="50%"
-                    className="photo-container"
-                    src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
-                    alt="Product"
-                  />
-                )}
-              </li>
+              {advert.photo.length > 0 ? (
+                <img
+                  width="50%"
+                  className="photo-container-lista"
+                  src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
+                  alt="Product"
+                />
+              ) : (
+                <img width="50%" className="photo-container-lista" src={broken} alt="No hay foto" />
+              )}
               <li>
                 <strong>{advert.name}</strong>
               </li>
