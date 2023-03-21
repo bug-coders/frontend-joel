@@ -18,29 +18,22 @@ ul {
   height: 500px;
   padding: 30px 20px;
   margin: 0 auto 40px auto;
-  background-color: rgb(230, 230, 230);
+  
+  background-color: rgba(255, 255, 255, 0.637);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.281), 0px 0px 5px #696969;
   border-radius: 20px;
 }
 
 .advert-container-det:hover {
-  border-radius: 25%;
+  border-radius: 10%;
   transition: all .25s linear;
 }
 
-/* .adsGrid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 15px;
-  padding: 1.5rem;
-  margin-top: 0px;
-  background-color: rgba(223, 199, 243, 0.39);
-  align-items: center;
-} */
-
-.superContAds {
+.advertsPageDet{
   display: flex;
-  margin-right: 80px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .photo-container {
@@ -50,43 +43,37 @@ ul {
 .photo-container-listaDet {
   width: 350px;
   height: 350px;
-  
 }
 
-.delete-button {
-  margin-bottom: 20px;
-  margin-top: -20px;
+.delete-button-det {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.delete-button button {
-  margin: 0 20px;
+.delete-button-det button {
+  margin: 20px;
 }
 
 .tituloAnuncios{
   color: rgb(0, 19, 36);
 }
 
-.tagsF{
-  /* overflow:auto; */
-}
+
 
 @media screen and (max-width: 449px) {
-  .advert-container {
+  .advert-container-det {
     width: 150px;
     height: 150px;
     font-size: 12px;
     margin: 5px;
   }
-
-  .adsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3px;
-    padding: 3px;
-    margin: 0px;
+  .photo-container-listaDet {
+    width: 85px;
+  height: 85px;
+  overflow: hidden;
   }
-  .superContAds {
-    margin: 5px;
-    flex-direction: column;
+  .detLab{
+    font-size:smaller;
   }
-  
 }

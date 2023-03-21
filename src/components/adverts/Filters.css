@@ -4,7 +4,13 @@
   justify-content: center;
   flex-direction: column;
   /* padding: 1.5rem; */
-  background-color: rgba(223, 199, 243, 0.39);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.637);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.281), 0px 0px 5px #696969;
+}
+
+.filterList{
+  margin: 0px 0px 0px 10px;
 }
 
 .adverts-filters {

@@ -48,7 +48,7 @@ const AdvertPage = ({ onLogout }) => {
   return (
     <div>
       <Layout onLogout={onLogout}>
-        <div className="advertsPage">
+        <div className="advertsPageDet">
           <h1>Detalle del anuncio</h1>
           {!deletedAd && (
             <ul className="advert-container-det">
@@ -75,10 +75,10 @@ const AdvertPage = ({ onLogout }) => {
               </li>
 
               <li>{advert.price}€</li>
-              <li>Categoría/s: {advert.tags ? advert.tags.join(', ') : advert.tags}</li>
+              <li className='detLab' >Categoría/s: {advert.tags ? advert.tags.join(', ') : advert.tags}</li>
             </ul>
           )}
-          <div className="delete-button">
+          <div className="delete-button-det">
             {!deleteAd && <Button onClick={askDeleteAd}>Borrar anuncio</Button>}
             {deleteAd && !deletedAd && (
               <div className="delete-confirmation">

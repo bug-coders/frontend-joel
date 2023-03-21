@@ -3,7 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import iconT from '../../assets/icons/Twitter.png';
 import iconF from '../../assets/icons/Facebook.png';
 import iconI from '../../assets/icons/Instagram.png';
-import logo from '../../assets/wakapop propio.png'
+import logo from '../../assets/wakapop propio.png';
+import topm from '../../assets/top-menu.png';
 import Button from '../Button';
 import './Layout.css';
 
@@ -50,7 +51,7 @@ const Layout = ({ children, onLogout, ...props }) => {
       <div className="bodyHead">
         <div className="header-navbar-mob">
           <details className="lista-detalle">
-            <summary>=🏠=</summary>
+            <summary><img className="icontop" src={topm} alt="Menu" /></summary>
             <ul>
               <li>
                 <NavLink className="navlinks" to="/adverts" end>
