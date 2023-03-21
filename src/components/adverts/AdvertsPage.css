@@ -16,10 +16,19 @@ ul {
 }
 
 .advert-container {
+  width: 150px ;
+  height: 150px ;
   padding: 30px 20px;
   margin: 0 auto 40px auto;
-  background-color: bisque;
+  background-color: rgb(233, 233, 255);
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.281), 0px 0px 1px #696969;
   border-radius: 20px;
+}
+
+.advert-container:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.281), 0px 0px 25px #696969;
+  border-radius: 20%;
+  transition: all .25s linear;
 }
 
 .adsGrid {
@@ -29,13 +38,15 @@ ul {
   grid-gap: 15px;
   padding: 1.5rem;
   margin-top: 0px;
-  background-color: rgba(223, 199, 243, 0.39);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.637);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.281), 0px 0px 5px #696969;
   align-items: center;
 }
 
 .superContAds {
   display: flex;
-  margin-right: 80px;
+  /* margin-right: 80px; */
 }
 
 .photo-container {
@@ -57,13 +68,27 @@ ul {
   margin: 0 20px;
 }
 
-.tituloAnuncios{
-  color: aliceblue;
+.titulos{
+  display: flex;
+  justify-content: space-between;
 }
 
-@media screen and (max-width: 395px) {
+.tituloAnuncios{
+  color: rgb(0, 19, 36);
+  width: 80%;
+}
+.tituloFiltro{
+  color: rgb(0, 19, 36);
+  width: 20%;
+}
+
+.tagsF{
+  display: none;
+}
+
+@media screen and (max-width: 609px) {
   .advert-container {
-    width: 110px;
+    width: 150px;
     height: 150px;
     font-size: 12px;
     margin: 5px;
@@ -78,6 +103,61 @@ ul {
   .superContAds {
     margin: 5px;
     flex-direction: column;
+  }
+  .titulos{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tituloFiltro{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 610px) {
+ 
+  
+  .adsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
+  }
+  
+}
+@media screen and (min-width: 840px) {
+  
+
+  .adsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
+  }
+  
+}
+
+@media screen and (min-width: 1040px) {
+  
+  
+  .adsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
+  }
+  
+}
+
+@media screen and (min-width: 1350px) {
+  
+  
+  .adsGrid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
   }
   
 }
