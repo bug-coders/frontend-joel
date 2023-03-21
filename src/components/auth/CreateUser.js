@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { authLogin } from '../../store/actions.js';
 import { registerUser } from '../../store/createUserActions';
 import Error from '../Error';
 import Button from '../Button';
 import logo from '../../assets/wakapop propio.png';
-import sax from '../../assets/sax.png';
-import guitt from '../../assets/ESP.png';
+// import sax from '../../assets/sax.png';
+// import guitt from '../../assets/ESP.png';
 import iconT from '../../assets/icons/Twitter.png';
 import iconF from '../../assets/icons/Facebook.png';
 import iconI from '../../assets/icons/Instagram.png';
@@ -48,10 +48,12 @@ const CreateUser = () => {
     <div className="formMain">
       <div className="formCont">
         <div className="logoCont">
-          <img className="logoReg" src={logo} alt="Wusikando" />
+        <Link className="header-logo" to="/adverts">
+            <img className='logoReg' src={logo} alt="Wusikando" />
+          </Link>
         </div>
         <div className="formcontainer">
-          <img className="imgAdd" src={sax} alt="Wusikando" />
+          {/* <img className="imgAdd" src={sax} alt="Wusikando" /> */}
           <form onSubmit={handleSubmit(submitForm)} className="form-page-container-sign">
             <h1 className="form-title-sign"> {'Sign up'} </h1>
 
@@ -94,15 +96,15 @@ const CreateUser = () => {
             {error && <Error>{error}</Error>}
             {customError && <Error>{customError}</Error>}
             <Button type="submit" className="button-sign" disabled={loading}>
-              {loading ? 'Loading...' : 'Register'}
+              {loading ? 'Loading...' : 'Registrar'}
             </Button>
             <Button className="button-sign">
-              <NavLink className="navlinks" to="/">
+              <NavLink className="navlinksButt" to="/">
                 Volver
               </NavLink>
             </Button>
           </form>
-          <img className="imgAdd" src={guitt} alt="Wusikando" />
+          {/* <img className="imgAdd" src={guitt} alt="Wusikando" /> */}
         </div>
         <footer className="footer">
           <div>

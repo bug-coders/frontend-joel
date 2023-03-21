@@ -45,11 +45,13 @@ label {
   padding: 0 15px;
   width: 45%;
   background-color: rgba(255, 255, 255, 0.192);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.281), 0px 0px 15px #696969;
-  border-color: rgb(59, 59, 59);
-  border: solid 1px;
   border-radius: 15px;
   padding-bottom: 4px;
+}
+
+.buttonLog{
+  text-decoration: none !important;
+  color: black !important;
 }
 
 .loginPageTitle {

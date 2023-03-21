@@ -7,10 +7,7 @@ const Button = styled.button`
   background-color: ${(props) =>
     props.variant === "primary" ? accentColor : "white"};
   border-radius: 6px;
-  border-style: solid;
-  border-width: 2px;
   text-decoration: none;
-  border-color: ${accentColor};
   color: ${(props) => (props.variant === "primary" ? "white" : accentColor)};
   cursor: pointer;
   display: inline-flex;
@@ -29,8 +26,9 @@ const Button = styled.button`
   pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
   text-decoration: none;
   transition: background-color 0.2s;
+  text-decoration: none !important;
+  color: black !important;
   
-  box-shadow: 3px 3px 10px black, 0px 0px 25px #696969;
   &:hover {
     background-color: ${(props) =>
       props.variant === "primary"

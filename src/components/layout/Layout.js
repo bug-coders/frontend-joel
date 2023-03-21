@@ -46,9 +46,9 @@ const Layout = ({ children, onLogout, ...props }) => {
           <NavLink className="navlinksP" to="/adverts/new">
             Crear Anuncio
           </NavLink>
-          <NavLink to="/registrar" className="navlinksP">
+          {/* <NavLink to="/registrar" className="navlinksP">
             Registrar usuario
-          </NavLink>
+          </NavLink> */}
           <p></p>
         </div>
       <div className="bodyHead">
@@ -69,9 +69,9 @@ const Layout = ({ children, onLogout, ...props }) => {
               </li>
 
               <li>
-                <NavLink to="/registrar" className="navlinks">
+                {/* <NavLink to="/registrar" className="navlinks">
                   Registrar usuario
-                </NavLink>
+                </NavLink> */}
               </li>
             </ul>
           </details>

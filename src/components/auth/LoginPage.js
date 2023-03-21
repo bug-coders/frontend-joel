@@ -36,7 +36,7 @@ const LoginPage = ({ onLogin, ...props }) => {
   return (
     <div className="loginPage">
       <img className='logoLog' src={logo} alt="Wusikando" />
-      <h1 className="loginPageTitle">Bienvenido@ a Wakapop</h1>
+      <h1 className="loginPageTitle">Bienvenido@ a WusikU</h1>
       <h4 className="loginPageTitle">
         Has login para acceder a los anuncios
       </h4>
@@ -79,8 +79,8 @@ const LoginPage = ({ onLogin, ...props }) => {
           <Button type="submit" className="button" disabled={!isButtonEnabled()}>
             Login
           </Button>
-          <Button className="button">
-          <NavLink to="/registrar">
+          <Button className="buttonLog">
+          <NavLink className="buttonLog" to="/registrar">
             Registrar usuario
           </NavLink>
           </Button>

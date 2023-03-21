@@ -7,7 +7,6 @@ body{
 .logo {
   width: 180px;
   border-radius: 5px;
-  box-shadow: 3px 3px 10px black, 0px 0px 25px #696969;
 }
 
 .logo:hover{
@@ -83,30 +82,20 @@ body{
 
 .navlinksP {
   margin: 10px;
-  font-size: 29px;
+  font-size:medium;
   color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 0px 25px 0px 25px;
 }
 
 .navlinksP:hover {
-  border: solid;
-  border-width: 1px;
-  border-radius: 20px;
   color: rgb(255, 255, 255);
   font-weight: bold;
   transition: all .25s linear;
-  border-color: rgba(3, 151, 250, 0.329);
-  background-color: rgba(127, 214, 255, 0.192);
 }
 
 .navlinksP.active {
   text-decoration: none;
-  border: solid;
-  border-width: 1px;
-  border-radius: 20px;
-  background-color: #c0d2df8a;
-  border-color: #0397fa;
   color: rgb(0, 0, 0);
   font-weight: 700;
 }
@@ -118,29 +107,18 @@ body{
 }
 
 .navlinks:hover {
-  border: solid;
-  border-width: 1px;
-  border-radius: 5px;
   color: rgb(255, 255, 255);
   font-weight: bold;
   transition: all .25s linear;
-  border-color: rgba(3, 151, 250, 0.329);
-  background-color: rgba(127, 214, 255, 0.192);
 }
 
 .navlinks.active {
   text-decoration: none;
-  border: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  background-color: #c0d2df8a;
-  border-color: #0397fa;
   color: rgb(0, 0, 0);
   font-weight: 700;
 }
 
 .iconFoot{
-    box-shadow: 3px 3px 10px black, 0px 0px 25px #696969;
     transition: all 0.6s linear;
     border-radius: 10px;
     width: 100%;
