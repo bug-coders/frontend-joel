@@ -54,8 +54,23 @@ option {
   text-align: center;
 }
 
-@media screen and (max-width: 560px) {
+.lista-detalle-filtro{
+  width: 100%;
+    border: 1px solid #c0d2df;
+    background: #4a505531;   
+    padding: 5px 10px;
+    border-radius: 8px;    
+    color: rgb(5, 4, 59);
+    margin: 0px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 609px) {
   .labFilter {
+    display: none;
+  }
+
+  .adverts-filters {
     display: none;
   }
 
@@ -107,5 +122,10 @@ option {
   .filter-fieldset-tags {
     display: flex;
     flex-direction: column;
+  }
+}
+@media screen and (min-width: 610px) {
+  .lista-detalle-filtro{
+    display: none;
   }
 }
