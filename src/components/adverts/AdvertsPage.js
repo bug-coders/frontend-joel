@@ -43,17 +43,16 @@ const AdvertsPage = ({ onLogout }) => {
       <div className="superContAds">
         <div className="filterList">
           <Filters getAdvertsFilter={getAdvertsFilter} />
-
-          {filteredAdverts.length === 0 && (
-            <div>
-              No hay anuncios que cumplan con esos requisitos. Modifica los filtros o{' '}
-              <Link to="/adverts/new">publica un anuncio.</Link>
-            </div>
-          )}
         </div>
 
         {adverts.length ? (
           <ul className="adsGrid">
+            {filteredAdverts.length === 0 && (
+              <div className="advert-detail-link advert-container">
+                No hay anuncios que cumplan con esos requisitos. Modifica los filtros o{' '}
+                <Link to="/adverts/new">publica un anuncio.</Link>
+              </div>
+            )}
             {filteredAdverts.reverse().map((advert) => (
               <li key={advert._id}>
                 <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>

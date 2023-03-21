@@ -105,9 +105,6 @@ const Filters = ({ getAdvertsFilter }) => {
         </fieldset>
 
         <div className="byPrice">
-          <label className="labFilter" htmlFor="byPrice">
-            Por precio
-          </label>
           <input
             type="number"
             name="byPrice"
@@ -129,7 +126,6 @@ const Filters = ({ getAdvertsFilter }) => {
         </div>
 
         <div className="filter-fieldset-tags">
-          <label htmlFor="byTags">Categorías</label>
           <select
             name="byTags"
             id="byTags"
