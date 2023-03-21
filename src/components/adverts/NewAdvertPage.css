@@ -2,6 +2,17 @@
   margin-bottom: 20px;
 }
 
+.backimg{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.788);
+  
+}
+
+.imgM{
+  height: 500px;
+}
+
 .labPrice {
   height: 38px;
     font-size: 14px;
@@ -10,19 +21,21 @@
     padding: 9px 16px
 }
 
-.labPrice:-webkit-autofill::first-line {
-  font-family: 'Open Sans',Verdana,Tahoma,Arial,Helvetica,sans-serif;
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: -0.11px
+.bodyCont{  
+  background-color: rgba(255, 255, 255, 0.568);
+  background-image: url("../../assets/wakapop propio.png");
+  background-repeat: repeat;
+  background-size: 80px 40px;
 }
 
-
-
-.labPrice:focus-visible {
-  outline: none
+.formCrea{
+  background-color: rgba(255, 255, 255, 0.568);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.281), 0px 0px 5px #696969;
+  width: 300px;
+  border: solid 1px;
+  border-radius: 15px;
+  padding-bottom: 30px;
 }
-
 
 
 .labPrice {
@@ -30,69 +43,4 @@
   border-radius: 4px;
   width: 100%;
   font-family: 'Open Sans',Verdana,Tahoma,Arial,Helvetica,sans-serif;
-  -webkit-appearance: none
-}
-
-.labPrice:not(:-moz-placeholder-shown) + .fx-input-text__placeholder.fx-input-text__placeholder {
-  position: absolute;
-  width: auto;
-  top: 0;
-  left: 8px;
-  margin-left: 0;
-  font-size: 10px;
-  line-height: 10px;
-  -moz-transition: font-size 100ms,top 100ms,left 100ms,line-height 100ms;
-  transition: font-size 100ms,top 100ms,left 100ms,line-height 100ms;
-  border-radius: 5px;
-  border: 2px solid #fff;
-  animation: fxTextinputBackgroundPlaceholder 250ms linear forwards;
-  padding-left: 8px;
-  padding-right: 8px
-}
-
-
-.labPrice:not(:-moz-placeholder-shown){
-  position: absolute;
-  width: auto;
-  top: 0;
-  left: 8px;
-  margin-left: 0;
-  font-size: 10px;
-  line-height: 10px;
-  -moz-transition: font-size 100ms,top 100ms,left 100ms,line-height 100ms;
-  transition: font-size 100ms,top 100ms,left 100ms,line-height 100ms;
-  border-radius: 5px;
-  border: 2px solid #fff;
-  animation: fxTextinputBackgroundPlaceholder 250ms linear forwards;
-  padding-left: 8px;
-  padding-right: 8px
-}
-
-.labPrice:focus{
-  position: absolute;
-    width: auto;
-    top: 0;
-    left: 8px;
-    margin-left: 0;
-    font-size: 10px;
-    line-height: 10px;
-    -moz-transition: font-size 100ms,top 100ms,left 100ms,line-height 100ms;
-    transition: font-size 100ms,top 100ms,left 100ms,line-height 100ms;
-    border-radius: 5px;
-    border: 2px solid #fff;
-    animation: fxTextinputBackgroundPlaceholder 250ms linear forwards;
-    padding-left: 8px;
-    padding-right: 8px
-}
-
-.labPrice:hover:not(.fx-input:focus) {
-  border: 1px solid #4b4b4b
-}
-
-.labPrice:hover:not(.fx-input:focus) .fx-input-text__label, .fx-input-text__inner:hover:not(.fx-input-text__field:focus) .fx-input-text__placeholder {
-  color: #4b4b4b
-}
-
-.labPrice:hover:not(.fx-input:focus) .fx-input-text__icon-before {
-  border-right-color: #4b4b4b
 }

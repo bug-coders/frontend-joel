@@ -1,0 +1,101 @@
+.form-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form div {
+  margin: 20px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+.logoCont{
+  background-color: rgba(255, 255, 255, 0.788);
+}
+
+.logoReg {
+  background-color: rgba(255, 255, 255, 0.788);
+  width: 280px;
+  border-radius: 5px;
+}
+
+.logoReg:hover{
+  animation-name: bounce;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+.loginForm__field {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imgAdd{
+  padding: 10%;
+  height: 900px;
+}
+
+.formMain{
+  background-color: rgba(255, 255, 255, 0.568);
+  background-image: url("../../assets/wakapop propio.png");
+  background-repeat: repeat;
+  background-size: 80px 40px;
+  height: 900px;
+}
+
+.formcontainer{
+  background-color: rgba(255, 255, 255, 0.788);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 800px;
+}
+
+.form-page-container-sign{
+  background-color: rgba(255, 255, 255, 0.568);
+  padding: 150px 10px 10px 10px;
+  width: 350px;
+  height: 530px;
+  border: solid 1px;
+  border-radius: 15px;
+  padding-bottom: 30px;
+}
+
+.loginForm__submit {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.loginPageTitle{
+  color: aliceblue;
+}
+
+
+@media screen and (max-width: 450px) {
+  .loginPage {
+    width: 75%;
+  }
+
+  .logLabl{
+    width:100%;
+    margin: 80px 80px 80px 80px
+  }
+
+  .loginput{
+    font-size: x-large;
+    margin: 5px;
+  }
+
+  .form-input{
+    margin: 0px;
+    width: 300px;
+  }
+}
+
