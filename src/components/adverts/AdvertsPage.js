@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import Layout from "../layout/Layout.js";
-import "./AdvertsPage.css";
-import { Link } from "react-router-dom";
-import broken from "../../assets/broken-1.png";
-import Filters from "./Filters.js";
-import { useDispatch, useSelector } from "react-redux";
-import { advertsLoad } from "../../store/actions.js";
-import { getAdvertsRedux } from "../../store/selectors.js";
+import { useEffect, useState } from 'react';
+import Layout from '../layout/Layout.js';
+import './AdvertsPage.css';
+import { Link } from 'react-router-dom';
+import broken from '../../assets/broken-1.png';
+import Filters from './Filters.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { advertsLoad } from '../../store/actions.js';
+import { getAdvertsRedux } from '../../store/selectors.js';
 
 const AdvertsPage = ({ onLogout }) => {
   const adverts = useSelector(getAdvertsRedux) || [];
@@ -18,7 +18,7 @@ const AdvertsPage = ({ onLogout }) => {
   }, [dispatch]);
 
   const forSale = (sale) => {
-    return sale ? "Vendo" : "Compro";
+    return sale ? 'Vendo' : 'Compro';
   };
 
   const getAdvertsFilter = (filters) => {
@@ -30,12 +30,11 @@ const AdvertsPage = ({ onLogout }) => {
   filteredAdverts = adverts.filter((advert) => {
     return (
       !filters.length ||
-      ((filters[0] === "" || filters[0] === advert.name) &&
-        (filters[1] === "" || filters[1] === advert.sale) &&
-        (filters[2] === "" || filters[2] <= advert.price) &&
-        (filters[3] === "" || filters[3] >= advert.price) &&
-        (!filters[4].length ||
-          filters[4].every((tag) => advert.tags.includes(tag))))
+      ((filters[0] === '' || advert.name.includes(filters[0])) &&
+        (filters[1] === '' || filters[1] === advert.sale) &&
+        (filters[2] === '' || filters[2] <= advert.price) &&
+        (filters[3] === '' || filters[3] >= advert.price) &&
+        (!filters[4].length || filters[4].every((tag) => advert.tags.includes(tag))))
     );
   });
 
@@ -51,8 +50,8 @@ const AdvertsPage = ({ onLogout }) => {
 
           {filteredAdverts.length === 0 && (
             <div>
-              No hay anuncios que cumplan con esos requisitos. Modifica los
-              filtros o <Link to="/adverts/new">publica un anuncio.</Link>
+              No hay anuncios que cumplan con esos requisitos. Modifica los filtros o{' '}
+              <Link to="/adverts/new">publica un anuncio.</Link>
             </div>
           )}
         </div>
@@ -60,9 +59,7 @@ const AdvertsPage = ({ onLogout }) => {
           <ul className="adsGrid">
             {filteredAdverts.reverse().map((advert) => (
               <li key={advert._id}>
-                <Link
-                  className="advert-detail-link"
-                  to={`/adverts/${advert._id}`}>
+                <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
                   <ul className="advert-container">
                     {advert.photo.length > 0 && advert.photo[0].filename ? (
                       <img
@@ -89,9 +86,7 @@ const AdvertsPage = ({ onLogout }) => {
                       <strong>{advert.name}</strong>
                     </li>
                     <li>{advert.price}€</li>
-                    <li className="tagsF">
-                      Categoría/s: {advert.tags && advert.tags.join(", ")}
-                    </li>
+                    <li className="tagsF">Categoría/s: {advert.tags && advert.tags.join(', ')}</li>
                   </ul>
                 </Link>
               </li>
@@ -99,8 +94,7 @@ const AdvertsPage = ({ onLogout }) => {
           </ul>
         ) : (
           <div>
-            No hay anuncios.{" "}
-            <Link to="/adverts/new">¡Publica el primer anuncio!</Link>
+            No hay anuncios. <Link to="/adverts/new">¡Publica el primer anuncio!</Link>
           </div>
         )}
       </div>
