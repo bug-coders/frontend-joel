@@ -40,10 +40,6 @@ const AdvertsPage = ({ onLogout }) => {
 
   return (
     <Layout onLogout={onLogout}>
-      <div className="titulos">
-        <h1 className="tituloFiltro">Filtrar</h1>
-        <h1 className="tituloAnuncios">Listado de anuncios</h1>
-      </div>
       <div className="superContAds">
         <div className="filterList">
           <Filters getAdvertsFilter={getAdvertsFilter} />
@@ -55,6 +51,7 @@ const AdvertsPage = ({ onLogout }) => {
             </div>
           )}
         </div>
+
         {adverts.length ? (
           <ul className="adsGrid">
             {filteredAdverts.reverse().map((advert) => (
