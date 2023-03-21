@@ -6,6 +6,8 @@ import { getApiTags, getUi } from '../../store/selectors.js';
 import Layout from '../layout/Layout.js';
 import './NewAdvertPage.css';
 
+import Button from "../Button";
+
 const NewAdvertPage = ({ onLogout }) => {
   const [name, setName] = useState('');
   const [sale, setSale] = useState('');
@@ -77,11 +79,12 @@ const NewAdvertPage = ({ onLogout }) => {
           <form onSubmit={handleSubmit}>
             <div className="adverts-create">
               <div>
-                <label htmlFor="Name">Nombre</label>
+                <label className='labPrice' htmlFor="Name">Nombre</label>
                 <input
                   type="text"
                   name="Name"
                   id="Name"
+                  placeholder='Nombre'
                   onChange={handleChangeName}
                   value={name}
                   autoFocus
@@ -105,11 +108,13 @@ const NewAdvertPage = ({ onLogout }) => {
               </div>
 
               <div className="Price">
-                <label htmlFor="Price">Precio</label>
+                <label htmlFor="Price" className='labPrice'>Precio</label>
                 <input
                   type="number"
                   name="Price"
                   id="Price"
+                  placeholder="Precio"
+                  
                   onWheel={(event) => event.currentTarget.blur()}
                   onChange={handleChangePrice}
                   value={price}
@@ -138,13 +143,14 @@ const NewAdvertPage = ({ onLogout }) => {
                 type="file"
                 name="photo"
                 id="photo"
+                className='imgLoader'
                 onChange={handleChangePhoto}
                 accept="image/*"
               />
             </div>
-            <button type="submit" disabled={isDisabled()}>
+            <Button type="submit" disabled={isDisabled()}>
               Publicar
-            </button>
+            </Button>
           </form>
         </div>
       </Layout>

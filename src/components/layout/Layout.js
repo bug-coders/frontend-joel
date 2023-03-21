@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import iconT from '../../assets/icons/Twitter.png';
 import iconF from '../../assets/icons/Facebook.png';
 import iconI from '../../assets/icons/Instagram.png';
-
+import logo from '../../assets/wakapop propio.png'
 import Button from '../Button';
 import './Layout.css';
 
@@ -18,7 +18,7 @@ const Layout = ({ children, onLogout, ...props }) => {
       <header className="header">
         <div>
           <Link className="header-logo" to="/adverts">
-            <strong>WuzikU</strong>
+            <img className='logo' src={logo} alt="Wusikando" />
           </Link>
         </div>
         <div className="header-navbar">

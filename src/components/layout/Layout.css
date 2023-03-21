@@ -1,12 +1,25 @@
 body{
-  background-color: rgb(31, 31, 31);
+  background-color: rgba(196, 196, 196, 0.74);
+}
+
+.logo {
+  width: 180px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px black, 0px 0px 25px #696969;
+}
+
+.logo:hover{
+  animation-name: bounce;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(71, 70, 70);
+  background-color: rgb(121, 121, 121);
   padding: 15px 30px;
 }
 
@@ -35,8 +48,8 @@ body{
 
 .lista-detalle{
   width: 100%;
-    border: 1px solid #96d1f8;
-    background: #65a9d731;   
+    border: 1px solid #c0d2df;
+    background: #4a505531;   
     padding: 5px 10px;
     border-radius: 8px;    
     color: rgb(5, 4, 59);
@@ -51,28 +64,43 @@ body{
     display: grid;
     grid-template-columns: 50px 50px 50px;
     gap: 30px;
-    background-color: rgb(71, 70, 70);
+    background-color: rgb(121, 121, 121);
     margin-bottom: 50px;
     height: 100px;
 }
 
 .navlinks {
   margin: 10px;
-  color: rgb(205, 209, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
+}
+
+.navlinks:hover {
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  
+  transition: all .25s linear;
+  border-color: rgba(3, 151, 250, 0.329);
+  background-color: rgba(127, 214, 255, 0.192);
 }
 
 .navlinks.active {
   text-decoration: none;
-  color: rgb(255, 170, 170);
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #0397fa;
+  color: rgb(4, 0, 214);
   font-weight: 600;
 }
 
 .iconFoot{
-    box-shadow: 3px 3px 10px black, 0px 0px 25px #0397fa;
+    box-shadow: 3px 3px 10px black, 0px 0px 25px #696969;
     transition: all 0.6s linear;
     border-radius: 10px;
     width: 100%;
+    filter: gray;
 }
 
 .iconFoot:hover{
@@ -82,7 +110,7 @@ body{
     animation-iteration-count: infinite;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 699px) {
   .iconFoot{
       border-radius: 15px;
   }
@@ -110,10 +138,12 @@ body{
 }
 }
 
-@media screen and (max-width: 549px) {
+@media screen and (max-width: 700px) {
   .header-navbar{
       display:none;
   }
+
+  
   .container-logo{
       margin-right: 30%; 
   }

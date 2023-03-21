@@ -1,0 +1,92 @@
+h1 {
+  margin-bottom: 20px;
+}
+
+ul {
+  /* list-style: none; */
+  padding: 0px;
+}
+
+.advert-detail-link {
+  display: flex;
+  color: black;
+  text-decoration: none;
+}
+
+.advert-container-det {
+  width: 450px;
+  height: 500px;
+  padding: 30px 20px;
+  margin: 0 auto 40px auto;
+  background-color: rgb(230, 230, 230);
+  border-radius: 20px;
+}
+
+.advert-container-det:hover {
+  border-radius: 25%;
+  transition: all .25s linear;
+}
+
+/* .adsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px;
+  padding: 1.5rem;
+  margin-top: 0px;
+  background-color: rgba(223, 199, 243, 0.39);
+  align-items: center;
+} */
+
+.superContAds {
+  display: flex;
+  margin-right: 80px;
+}
+
+.photo-container {
+  border-radius: 25px;
+}
+
+.photo-container-listaDet {
+  width: 350px;
+  height: 350px;
+  
+}
+
+.delete-button {
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.delete-button button {
+  margin: 0 20px;
+}
+
+.tituloAnuncios{
+  color: rgb(0, 19, 36);
+}
+
+.tagsF{
+  /* overflow:auto; */
+}
+
+@media screen and (max-width: 449px) {
+  .advert-container {
+    width: 150px;
+    height: 150px;
+    font-size: 12px;
+    margin: 5px;
+  }
+
+  .adsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
+  }
+  .superContAds {
+    margin: 5px;
+    flex-direction: column;
+  }
+  
+}

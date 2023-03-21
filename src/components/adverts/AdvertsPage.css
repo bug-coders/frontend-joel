@@ -16,10 +16,18 @@ ul {
 }
 
 .advert-container {
+  width: 150px ;
+  height: 150px ;
   padding: 30px 20px;
   margin: 0 auto 40px auto;
-  background-color: bisque;
+  background-color: rgb(233, 233, 255);
   border-radius: 20px;
+}
+
+.advert-container:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.281), 0px 0px 25px #696969;
+  border-radius: 20%;
+  transition: all .25s linear;
 }
 
 .adsGrid {
@@ -58,12 +66,16 @@ ul {
 }
 
 .tituloAnuncios{
-  color: aliceblue;
+  color: rgb(0, 19, 36);
 }
 
-@media screen and (max-width: 395px) {
+.tagsF{
+  display: none;
+}
+
+@media screen and (max-width: 449px) {
   .advert-container {
-    width: 110px;
+    width: 150px;
     height: 150px;
     font-size: 12px;
     margin: 5px;

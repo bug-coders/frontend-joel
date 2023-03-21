@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { registerUser } from '../../store/createUserActions';
 import Error from '../Error';
+import Button from '../Button';
+import "./LoginPage.css";
 
 const CreateUser = () => {
   const [customError, setCustomError] = useState(null);
@@ -70,14 +72,14 @@ const CreateUser = () => {
       </div>
       {error && <Error>{error}</Error>}
       {customError && <Error>{customError}</Error>}
-      <button type="submit" className="button" disabled={loading}>
+      <Button type="submit" className="button" disabled={loading}>
         {loading ? 'Loading...' : 'Register'}
-      </button>
-      <button className="button">
-        <NavLink className="nav-link" to="/">
-          ¥ Volver ¥
+      </Button>
+      <Button className="button">
+        <NavLink className="navlinks" to="/">
+           Volver 
         </NavLink>
-      </button>
+      </Button>
     </form>
   );
 };

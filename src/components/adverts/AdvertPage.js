@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout.js';
-import './AdvertsPage.css';
+import './AdvertDetailPage.css';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import '../../assets/broken-1.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdvertByIdRedux } from '../../store/selectors.js';
 import { advertDelete, advertLoad } from '../../store/actions.js';
 import broken from '../../assets/broken-1.png';
+import Button from "../Button";
 
 const AdvertPage = ({ onLogout }) => {
   const { id } = useParams();
@@ -50,13 +51,13 @@ const AdvertPage = ({ onLogout }) => {
         <div className="advertsPage">
           <h1>Detalle del anuncio</h1>
           {!deletedAd && (
-            <ul className="advert-container">
+            <ul className="advert-container-det">
               {advert.photo &&
               Object.entries(advert.photo).length > 0 &&
               advert.photo[0].filename ? (
                 <img
                   width="50%"
-                  className="photo-container-lista"
+                  className="photo-container-listaDet"
                   src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
                   alt="Product"
                   onError={(e) => {
@@ -78,13 +79,13 @@ const AdvertPage = ({ onLogout }) => {
             </ul>
           )}
           <div className="delete-button">
-            {!deleteAd && <button onClick={askDeleteAd}>Borrar anuncio</button>}
+            {!deleteAd && <Button onClick={askDeleteAd}>Borrar anuncio</Button>}
             {deleteAd && !deletedAd && (
               <div className="delete-confirmation">
                 <p> ¿Seguro? No podrás recuperar este anuncio.</p>
                 <div>
-                  <button onClick={handleDeleteAd}>Confirmar</button>
-                  <button onClick={askDeleteAd}>Cancelar</button>
+                  <Button onClick={handleDeleteAd}>Confirmar</Button>
+                  <Button onClick={askDeleteAd}>Cancelar</Button>
                 </div>
               </div>
             )}

@@ -77,16 +77,16 @@ span {
   }
   
 
-  .footer {
+  /* .footer {
     bottom: 0px;
     text-align: center;
     height: 30px;
     margin-top: 20px;
     color: rgb(0, 0, 0);
     background-color: rgb(99, 255, 234);
-}
+  } */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .loginPage {
     width: 75%;
   }
@@ -99,6 +99,11 @@ span {
   .loginput{
     font-size: x-large;
     margin: 5px;
+  }
+
+  .form-input{
+    margin: 0px;
+    width: 300px;
   }
 }
 

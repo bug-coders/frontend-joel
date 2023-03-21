@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getApiTags } from "../../store/selectors.js";
 import { apiTagsLoad } from "../../store/actions.js";
+import Button from "../Button";
 
 const Filters = ({ getAdvertsFilter }) => {
   const [name, setName] = useState("");
@@ -69,12 +70,13 @@ const Filters = ({ getAdvertsFilter }) => {
   return (
     <form className="adverts-filters-container" onSubmit={handleSubmit}>
       <div className="adverts-filters">
+          <label className="labFilter" htmlFor="byName">Por nombre</label>
         <div>
-          <label htmlFor="byName">Por nombre</label>
           <input
             type="text"
             name="byName"
             id="byName"
+            placeholder="Por Nombre"
             onChange={handleChangeName}
             value={name}
           />
@@ -110,7 +112,7 @@ const Filters = ({ getAdvertsFilter }) => {
         
 
         <div className="byPrice">
-          <label htmlFor="byPrice">Por precio</label>
+          <label className="labFilter" htmlFor="byPrice">Por precio</label>
           <input
             type="number"
             name="byPrice"
@@ -153,7 +155,7 @@ const Filters = ({ getAdvertsFilter }) => {
           </select>
         </div>
 
-        <button type="submit" /* disabled={isDisabled()} */>Filtrar</button>
+        <Button type="submit" /* disabled={isDisabled()} */>Filtrar</Button>
       </div>
     </form>
   );
