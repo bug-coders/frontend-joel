@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getApiTags } from '../../store/selectors.js';
 import { apiTagsLoad } from '../../store/actions.js';
-import Button from '../Button';
 import filtr from '../../assets/filter_filters_funnel_list_navigation_sort_sorting_icon_123212.webp';
 
 const Filters = ({ getAdvertsFilter }) => {

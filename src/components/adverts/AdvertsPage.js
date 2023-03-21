@@ -48,7 +48,7 @@ const AdvertsPage = ({ onLogout }) => {
         {adverts.length ? (
           <ul className="adsGrid">
             {filteredAdverts.length === 0 && (
-              <div className="advert-detail-link advert-container">
+              <div>
                 No hay anuncios que cumplan con esos requisitos. Modifica los filtros o{' '}
                 <Link to="/adverts/new">publica un anuncio.</Link>
               </div>
