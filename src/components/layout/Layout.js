@@ -22,17 +22,7 @@ const Layout = ({ children, onLogout, ...props }) => {
             <img className='logo' src={logo} alt="Wusikando" />
           </Link>
         </div>
-        <div className="header-navbar">
-          <NavLink className="navlinks" to="/adverts" end>
-            Listado de Anuncios
-          </NavLink>
-          <NavLink className="navlinks" to="/adverts/new">
-            Crear Anuncio
-          </NavLink>
-          <NavLink to="/registrar" className="navlinks">
-            Registrar usuario
-          </NavLink>
-        </div>
+        
         <div className="header-logout">
           {confirmLogout && (
             <div>
@@ -48,6 +38,19 @@ const Layout = ({ children, onLogout, ...props }) => {
           {!confirmLogout && <Button onClick={askLogoutConfirmation}>Logout</Button>}
         </div>
       </header>
+      <div className="header-navbar">
+            <p></p>
+          <NavLink className="navlinksP" to="/adverts" end>
+            Listado de Anuncios
+          </NavLink>
+          <NavLink className="navlinksP" to="/adverts/new">
+            Crear Anuncio
+          </NavLink>
+          <NavLink to="/registrar" className="navlinksP">
+            Registrar usuario
+          </NavLink>
+          <p></p>
+        </div>
       <div className="bodyHead">
         <div className="header-navbar-mob">
           <details className="lista-detalle">

@@ -21,18 +21,23 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(121, 121, 121);
+  background-color: rgb(160, 160, 160);
   padding: 15px 30px;
 }
 
+.header-navbar-navlinks{
+  font-size: larger;
+}
+
 .header-navbar {
+  width:100%;
   text-decoration: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.788);
+  background-color: rgba(179, 179, 179, 0.76);
   border-radius: 5px;
-  width: 650px;
   height: 70px;
   margin-right: 25px;
 }
@@ -71,9 +76,39 @@ body{
     display: grid;
     grid-template-columns: 50px 50px 50px;
     gap: 30px;
-    background-color: rgb(121, 121, 121);
+    background-color: rgb(160, 160, 160);
     margin-bottom: 50px;
     height: 100px;
+}
+
+.navlinksP {
+  margin: 10px;
+  font-size: 29px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 0px 25px 0px 25px;
+}
+
+.navlinksP:hover {
+  border: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: all .25s linear;
+  border-color: rgba(3, 151, 250, 0.329);
+  background-color: rgba(127, 214, 255, 0.192);
+}
+
+.navlinksP.active {
+  text-decoration: none;
+  border: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  background-color: #c0d2df8a;
+  border-color: #0397fa;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
 }
 
 .navlinks {
@@ -98,9 +133,10 @@ body{
   border: solid;
   border-width: 1px;
   border-radius: 5px;
+  background-color: #c0d2df8a;
   border-color: #0397fa;
-  color: rgb(4, 0, 214);
-  font-weight: 600;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
 }
 
 .iconFoot{
