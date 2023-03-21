@@ -9,6 +9,11 @@ form div {
   margin: 20px;
 }
 
+.logoLog {
+  width: 350px;
+  border-radius: 5px;
+}
+
 label {
   margin-right: 10px;
 }
@@ -24,12 +29,14 @@ label {
   width: 100%;
 }
 
-.loginPageTitle{
-  color: aliceblue;
+.loginPageTitle {
+  color: rgb(0, 0, 0) !important;
 }
 
 .loginPage {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -37,10 +44,16 @@ label {
   max-width: 600px;
   padding: 0 15px;
   width: 45%;
+  background-color: rgba(255, 255, 255, 0.192);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.281), 0px 0px 15px #696969;
+  border-color: rgb(59, 59, 59);
+  border: solid 1px;
+  border-radius: 15px;
+  padding-bottom: 4px;
 }
 
 .loginPageTitle {
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   align-items: center;
   display: flex;
   height: 64px;
@@ -48,62 +61,68 @@ label {
   margin-bottom: 10px;
 }
 
-  .loginPage__form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgb(95, 193, 206);
-    border-radius: 20px;
-  }
+.loginPage__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.568);
+  /* box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.281), 0px 0px 15px #696969; */
+  width: 350px;
+  border: solid 1px;
+  border-color: rgb(228, 228, 228);
+  border-radius: 15px;
+  padding-bottom: 4px;
+}
 span {
   width: 300px;
 }
-  
-  .loginForm__field {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-    
-  }
-  
-  .loginForm__submit {
-    margin-top: 10px;
-    width: 100%;
-  }
 
-  .loginForm-field {
-    padding: 10px 0;
-  }
-  
+.loginForm__field {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
 
-  /* .footer {
-    bottom: 0px;
-    text-align: center;
-    height: 30px;
-    margin-top: 20px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(99, 255, 234);
-  } */
+.loginForm__submit {
+  margin-top: 10px;
+  width: 100%;
+}
 
+.loginForm-field {
+  padding: 10px 0;
+  margin: 2px !important;
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginput {
+  width: 100%;
+  padding: 5px !important;
+}
+#password.loginput {
+  width: 100%;
+}
 @media screen and (max-width: 450px) {
   .loginPage {
     width: 75%;
   }
 
-  .logLabl{
-    width:100%;
-    margin: 80px 80px 80px 80px
+  .logLabl {
+    width: 100%;
+    margin: 80px 80px 80px 80px;
   }
 
-  .loginput{
+  .loginput {
     font-size: x-large;
     margin: 5px;
   }
 
-  .form-input{
+  .form-input {
     margin: 0px;
     width: 300px;
   }
 }
-

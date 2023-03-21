@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-
+import logo from '../../assets/wakapop propio.png'
 import "./LoginPage.css";
-
 import Button from "../Button";
 import { useDispatch, useSelector } from 'react-redux';
 import { authLogin, uiResetError } from '../../store/actions.js';
@@ -36,6 +35,7 @@ const LoginPage = ({ onLogin, ...props }) => {
 
   return (
     <div className="loginPage">
+      <img className='logoLog' src={logo} alt="Wusikando" />
       <h1 className="loginPageTitle">Bienvenido@ a Wakapop</h1>
       <h4 className="loginPageTitle">
         Has login para acceder a los anuncios
@@ -79,11 +79,11 @@ const LoginPage = ({ onLogin, ...props }) => {
           <Button type="submit" className="button" disabled={!isButtonEnabled()}>
             Login
           </Button>
-          <button className="button">
+          <Button className="button">
           <NavLink to="/registrar">
             Registrar usuario
           </NavLink>
-          </button>
+          </Button>
         </div>
       </form>
       {error && (
