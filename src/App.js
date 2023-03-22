@@ -26,23 +26,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
-        <Route
-          path="/adverts"
-          element={
-            <RequireAuth isLogged={isLogged}>
-              <AdvertsPage onLogout={handleLogout} />
-            </RequireAuth>
-          }
-        />
+        <Route path="/adverts" element={<AdvertsPage onLogout={handleLogout} />} />
 
-        <Route
-          path="/adverts/:id"
-          element={
-            <RequireAuth isLogged={isLogged}>
-              <AdvertPage onLogout={handleLogout} />
-            </RequireAuth>
-          }
-        />
+        <Route path="/adverts/:id" element={<AdvertPage onLogout={handleLogout} />} />
         <Route
           path="/adverts/new"
           element={
@@ -52,8 +38,8 @@ function App() {
           }
         />
         <Route path="/" element={<Navigate to="/adverts" />} />
-        
-				<Route path='/registrar' element={<CreateUser />} />
+
+        <Route path="/registrar" element={<CreateUser />} />
 
         <Route
           path="/404"
