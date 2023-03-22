@@ -81,7 +81,7 @@ const NewAdvertPage = ({ onLogout }) => {
             <div className="formCrea">
               <h1><img className="imgM" src={money} alt="Wusikando" />Crea tu anuncio<img className="imgM" src={money} alt="Wusikando" /></h1>
               <div className="adverts-create-container">
-                <form onSubmit={handleSubmit}>
+                <form className="formCreate" onSubmit={handleSubmit}>
                   <div className="adverts-create">
                     <div>
                       <label className="labPrice" htmlFor="Name">

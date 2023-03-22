@@ -7,6 +7,9 @@ const Button = styled.button`
   background-color: ${(props) =>
     props.variant === "primary" ? accentColor : "white"};
   border-radius: 6px;
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.788);
+  box-shadow: 1px -1px 1px rgba(97, 39, 6, 0.233), -1px 1px 1px rgba(97, 39, 6, 0.575);
   text-decoration: none;
   color: ${(props) => (props.variant === "primary" ? "white" : accentColor)};
   cursor: pointer;
@@ -33,7 +36,7 @@ const Button = styled.button`
     background-color: ${(props) =>
       props.variant === "primary"
         ? "rgb(26, 145, 218)"
-        : "rgba(29, 161, 242, 0.1)"};
+        : "rgba(97, 39, 6, 0.233)"};
   }
 `;
 

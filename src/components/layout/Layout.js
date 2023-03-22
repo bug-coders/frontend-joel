@@ -74,6 +74,35 @@ const Layout = ({ children, onLogout, ...props }) => {
           </NavLink> */}
         <p></p>
       </div>
+=======
+      <div className="header-navbar">
+          <NavLink className="navlinksP" to="/adverts" end>
+            Listado de Anuncios
+          </NavLink>
+          <NavLink className="navlinksP" to="/adverts/new">
+            Crear Anuncio
+          </NavLink>
+          {/* <NavLink to="/registrar" className="navlinksP">
+            Registrar usuario
+          </NavLink> */}
+        </div>
+        
+        <div className="header-logout">
+          {confirmLogout && (
+            <div>
+              ¿Seguro que hacer logout?{' '}
+              <div>
+                <Button onClick={onLogout}>Sí</Button>
+              </div>
+              <div>
+                <Button onClick={askLogoutConfirmation}>No</Button>
+              </div>
+            </div>
+          )}
+          {!confirmLogout && <Button onClick={askLogoutConfirmation}>Logout</Button>}
+        </div>
+      </header>
+>>>>>>> estilos-finales
       <div className="bodyHead">
         <div className="header-navbar-mob">
           <details className="lista-detalle">
