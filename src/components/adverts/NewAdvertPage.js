@@ -77,9 +77,9 @@ const NewAdvertPage = ({ onLogout }) => {
       <Layout onLogout={onLogout}>
         <div className="bodyCont">
           <div className="backimg">
-          <img className="imgM" src={money} alt="Wusikando" />
+          
             <div className="formCrea">
-              <h1>Crea tu anuncio</h1>
+              <h1><img className="imgM" src={money} alt="Wusikando" />Crea tu anuncio<img className="imgM" src={money} alt="Wusikando" /></h1>
               <div className="adverts-create-container">
                 <form onSubmit={handleSubmit}>
                   <div className="adverts-create">
@@ -171,7 +171,7 @@ const NewAdvertPage = ({ onLogout }) => {
               </div>
             </div>
             
-          <img className="imgM" src={money} alt="Wusikando" />
+          
           </div>
         </div>
       </Layout>

@@ -61,6 +61,19 @@ const Layout = ({ children, onLogout, ...props }) => {
           </div>
         )}
       </header>
+      <div className="header-navbar">
+        <p></p>
+        <NavLink className="navlinksP" to="/adverts" end>
+          Listado de Anuncios
+        </NavLink>
+        <NavLink className="navlinksP" to="/adverts/new">
+          Crear Anuncio
+        </NavLink>
+        {/* <NavLink to="/registrar" className="navlinksP">
+            Registrar usuario
+          </NavLink> */}
+        <p></p>
+      </div>
       <div className="bodyHead">
         <div className="header-navbar-mob">
           <details className="lista-detalle">
@@ -81,9 +94,9 @@ const Layout = ({ children, onLogout, ...props }) => {
               </li>
 
               <li>
-                <NavLink to="/registrar" className="navlinks">
+                {/* <NavLink to="/registrar" className="navlinks">
                   Registrar usuario
-                </NavLink>
+                </NavLink> */}
               </li>
             </ul>
           </details>
