@@ -1,16 +1,16 @@
-import "./Filters.css";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getApiTags } from "../../store/selectors.js";
-import { apiTagsLoad } from "../../store/actions.js";
-import filtr from "../../assets/filter_filters_funnel_list_navigation_sort_sorting_icon_123212.webp";
+import './Filters.css';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getApiTags } from '../../store/selectors.js';
+import { apiTagsLoad } from '../../store/actions.js';
+import filtr from '../../assets/filter_filters_funnel_list_navigation_sort_sorting_icon_123212.webp';
 
 const Filters = ({ getAdvertsFilter }) => {
-  const [name, setName] = useState("");
-  const [sale, setSale] = useState("");
+  const [name, setName] = useState('');
+  const [sale, setSale] = useState('');
   const [tags, setTags] = useState([]);
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
 
   const apiTags = useSelector(getApiTags);
   const dispatch = useDispatch();
@@ -30,10 +30,10 @@ const Filters = ({ getAdvertsFilter }) => {
 
   const handleChangeSale = (event) => {
     let isForSale = event.target.value;
-    if (isForSale === "true") {
+    if (isForSale === 'true') {
       isForSale = true;
     }
-    if (isForSale === "false") {
+    if (isForSale === 'false') {
       isForSale = false;
     }
 
@@ -45,22 +45,22 @@ const Filters = ({ getAdvertsFilter }) => {
     let tags = tagsArray.map((option) => {
       return option.value;
     });
-    tags = tags.filter((tag) => tag !== "");
+    tags = tags.filter((tag) => tag !== '');
     setTags(tags);
   };
 
   //TODO controlar que precio mínimo sea menor que máximo y viceversa
   const handleChangeMinPrice = (event) => {
-    if (event.target.value === "") {
-      setMinPrice("");
+    if (event.target.value === '') {
+      setMinPrice('');
     } else {
       setMinPrice(event.target.value);
     }
   };
 
   const handleChangeMaxPrice = (event) => {
-    if (event.target.value === "") {
-      setMaxPrice("");
+    if (event.target.value === '') {
+      setMaxPrice('');
     } else {
       setMaxPrice(event.target.value);
     }
@@ -81,10 +81,7 @@ const Filters = ({ getAdvertsFilter }) => {
           />
         </div>
 
-        <fieldset
-          className="filter-fieldset-radio"
-          onChange={handleChangeSale}
-          value={sale}>
+        <fieldset className="filter-fieldset-radio" onChange={handleChangeSale} value={sale}>
           <div className="radioCont">
             <label className="radioLabel" htmlFor="bySell">
               Venta
@@ -132,10 +129,11 @@ const Filters = ({ getAdvertsFilter }) => {
             name="byTags"
             id="byTags"
             className="select-page"
-            style={{ padding: "20px" }}
+            style={{ padding: '20px' }}
             multiple
             onChange={handleChangeTags}
-            value={tags}>
+            value={tags}
+          >
             <option key="none" value="" id="none">
               ---
             </option>
@@ -169,10 +167,7 @@ const Filters = ({ getAdvertsFilter }) => {
             </li>
 
             <li>
-              <fieldset
-                className="filter-fieldset-radio"
-                onChange={handleChangeSale}
-                value={sale}>
+              <fieldset className="filter-fieldset-radio" onChange={handleChangeSale} value={sale}>
                 <legend>Tipo de anuncio:</legend>
 
                 <div className="radioCont">
@@ -224,10 +219,11 @@ const Filters = ({ getAdvertsFilter }) => {
                 name="byTags"
                 id="byTags"
                 className="select-lista"
-                style={{ padding: "20px" }}
+                style={{ padding: '20px' }}
                 multiple
                 onChange={handleChangeTags}
-                value={tags}>
+                value={tags}
+              >
                 <option key="none" value="" id="none">
                   ---
                 </option>
