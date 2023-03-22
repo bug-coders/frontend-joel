@@ -1,25 +1,35 @@
 .adverts-filters-container {
   width: 90%;
+  height: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* padding: 1.5rem; */
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.637);
 }
 
 .filterList {
   margin: 0px 0px 0px 10px;
+  background-color: rgba(97, 39, 6, 0.233);
+  box-shadow: 3px 3px 10px rgba(97, 39, 6, 0.13), 0px 0px 25px rgba(97, 39, 6, 0.253);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 50%;
 }
 
 .adverts-filters {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 250px;
 }
 
 .filter-fieldset-radio {
+  display: flex;
+  justify-content: center;
   border-color: transparent;
+  padding: 0px;
 }
 
 .filter-fieldset-radio input {
@@ -35,6 +45,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 3px;
 }
 
 input {
@@ -53,16 +64,16 @@ option {
   text-align: center;
 }
 
-.select-page{
+/* .select-page{
   margin: 10px 10px 0px -15px;
-}
+} */
 
 .divelista{
   padding: 2%;
 }
 
 .filter-fieldset-tags{
-  margin: 0px;
+  margin: 3px;
 }
 
 .lista-detalle-filtro {

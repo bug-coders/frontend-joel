@@ -3,7 +3,6 @@ h1 {
 }
 
 body {
-  
   background-color: rgba(255, 255, 255, 0.788);
 }
 
@@ -21,19 +20,27 @@ ul {
 }
 
 .advert-container {
-  width: 150px ;
-  height: 150px ;
+  width: 250px;
+  height: 350px;
   padding: 30px 20px;
-  margin: 0 auto 40px auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  margin: 0px auto 40px auto;
   background-color: rgba(255, 255, 255, 0.788);
-  box-shadow: 2px -2px 2px rgba(0, 0, 0, 0.281), -2px 2px 1px #696969;
+  box-shadow: 2px -2px 2px rgba(97, 39, 6, 0.233),
+    -2px 2px 1px rgba(97, 39, 6, 0.575);
   border-radius: 20px;
 }
 
 .advert-container:hover {
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.281), 0px 0px 25px #696969;
+  box-shadow: 3px 3px 10px rgba(97, 39, 6, 0.233),
+    0px 0px 25px rgba(97, 39, 6, 0.575);
   border-radius: 20%;
-  transition: all .25s linear;
+  transition: all 0.25s linear;
 }
 
 .adsGrid {
@@ -59,8 +66,8 @@ ul {
 }
 
 .photo-container-lista {
-  width: 85px;
-  height: 85px;
+  width: 210px;
+  height: 185px;
   overflow: hidden;
 }
 
@@ -73,30 +80,36 @@ ul {
   margin: 0 20px;
 }
 
-.titulos{
+.titulos {
   display: flex;
   justify-content: space-between;
 }
 
-.tituloAnuncios{
+.tituloAnuncios {
   color: rgb(0, 19, 36);
   width: 80%;
 }
-.tituloFiltro{
+.tituloFiltro {
   color: rgb(0, 19, 36);
   width: 20%;
 }
 
-.tagsF{
+.tagsF {
   display: none;
 }
 
-@media screen and (max-width: 609px) {
+@media screen and (max-width: 810px) {
   .advert-container {
     width: 150px;
     height: 150px;
     font-size: 12px;
     margin: 5px;
+  }
+
+  .photo-container-lista {
+    width: 110px;
+    height: 85px;
+    overflow: hidden;
   }
 
   .adsGrid {
@@ -109,72 +122,59 @@ ul {
     margin: 5px;
     flex-direction: column;
   }
-  .titulos{
+  .titulos {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
-  .tituloFiltro{
+
+  .tituloFiltro {
     display: none;
   }
 }
 
-@media screen and (min-width: 610px) {
- 
-  
+/* @media screen and (min-width: 610px) {
   .adsGrid {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-  
+} */
+@media screen and (min-width: 811px) {
+  .adsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
+  }
+ 
 }
-@media screen and (min-width: 840px) {
-  
 
+
+@media screen and (min-width: 1185px) {
   .adsGrid {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-  
 }
 
-@media screen and (min-width: 1040px) {
-  
-  
+@media screen and (min-width: 1470px) {
   .adsGrid {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-  
 }
 
-@media screen and (min-width: 1350px) {
-  
-  
+@media screen and (min-width: 1777px) {
   .adsGrid {
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-  
-}
-
-@media screen and (min-width: 1740px) {
-  
-  
-  .adsGrid {
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 3px;
-    padding: 3px;
-    margin: 0px;
-  }
-  
 }
