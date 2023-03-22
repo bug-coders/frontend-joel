@@ -42,3 +42,7 @@ export const API_TAGS_LOADED_FAILURE = 'API_TAGS_LOADED_FAILURE';
 /////////// UI
 
 export const UI_RESET_ERROR = 'UI_RESET_ERROR';
+
+/////////// USER
+
+export const USER_LOGGED = 'USER_LOGGED';

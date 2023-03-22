@@ -2,14 +2,21 @@ import client, { removeAuthorizationHeader, setAuthorizationHeader } from '../..
 import storage from '../../utils/storage.js';
 
 export const login = async (credentials, rememberMe) => {
-  const accessToken = await client.post('/login', credentials);
+  const data = await client.post('/login', credentials);
+  const accessToken = data.JWTtoken;
+  const user = data.user;
+
   if (rememberMe === true) {
     storage.set('Auth', accessToken);
+    storage.set('User', user);
   }
-  return setAuthorizationHeader(accessToken);
+
+  setAuthorizationHeader(accessToken);
+  return user;
 };
 
 export const logout = () => {
   removeAuthorizationHeader();
   storage.remove('Auth');
+  storage.remove('User');
 };

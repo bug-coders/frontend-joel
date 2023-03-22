@@ -7,6 +7,7 @@ import {
   AUTH_LOGIN_SUCCESS,
   AUTH_LOGOUT_SUCCESS,
   UI_RESET_ERROR,
+  USER_LOGGED,
 } from './types.js';
 
 export const defaultState = {
@@ -15,6 +16,9 @@ export const defaultState = {
     areLoaded: false,
     data: [],
     apiTags: [],
+  },
+  user: {
+    data: {},
   },
   ui: {
     isLoading: false,
@@ -48,6 +52,15 @@ export function adverts(state = defaultState.adverts, action) {
       return { ...state, data: deletedAdvertList };
     case API_TAGS_LOADED_SUCCESS:
       return { ...state, apiTags: action.payload.result };
+    default:
+      return state;
+  }
+}
+
+export function user(state = defaultState.user, action) {
+  switch (action.type) {
+    case USER_LOGGED:
+      return { ...state, data: action.payload };
     default:
       return state;
   }

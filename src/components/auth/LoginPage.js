@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../../assets/wakapop propio.png'
-import "./LoginPage.css";
-import Button from "../Button";
+import logo from '../../assets/wakapop propio.png';
+import './LoginPage.css';
+import Button from '../Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { authLogin, uiResetError } from '../../store/actions.js';
 import { getUi } from '../../store/selectors.js';
@@ -35,14 +35,14 @@ const LoginPage = ({ onLogin, ...props }) => {
 
   return (
     <div className="loginPage">
-      <img className='logoLog' src={logo} alt="Wusikando" />
+      <img className="logoLog" src={logo} alt="Wusikando" />
       <h1 className="loginPageTitle">Bienvenido@ a WusikU</h1>
-      <h4 className="loginPageTitle">
-        Has login para acceder a los anuncios
-      </h4>
+      <h4 className="loginPageTitle">Has login para acceder a los anuncios</h4>
       <form className="loginPage__form" onSubmit={handleSubmit}>
         <div className="loginForm-field">
-          <label className="logLabl" htmlFor="email">Email</label>
+          <label className="logLabl" htmlFor="email">
+            Email
+          </label>
           <input
             type="email"
             name="email"
@@ -54,7 +54,9 @@ const LoginPage = ({ onLogin, ...props }) => {
           />
         </div>
         <div className="loginForm-field">
-          <label className="logLabl" htmlFor="password">Contraseña</label>
+          <label className="logLabl" htmlFor="password">
+            Contraseña
+          </label>
           <input
             id="password"
             type="password"
@@ -80,9 +82,9 @@ const LoginPage = ({ onLogin, ...props }) => {
             Login
           </Button>
           <Button className="buttonLog">
-          <NavLink className="buttonLog" to="/registrar">
-            Registrar usuario
-          </NavLink>
+            <NavLink className="buttonLog" to="/registrar">
+              Registrar usuario
+            </NavLink>
           </Button>
         </div>
       </form>
