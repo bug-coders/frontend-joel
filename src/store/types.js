@@ -46,3 +46,4 @@ export const UI_RESET_ERROR = 'UI_RESET_ERROR';
 /////////// USER
 
 export const USER_LOGGED = 'USER_LOGGED';
+export const USER_LOGOUT = 'USER_LOGOUT';

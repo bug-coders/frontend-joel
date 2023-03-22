@@ -8,6 +8,7 @@ import {
   AUTH_LOGOUT_SUCCESS,
   UI_RESET_ERROR,
   USER_LOGGED,
+  USER_LOGOUT,
 } from './types.js';
 
 export const defaultState = {
@@ -61,6 +62,8 @@ export function user(state = defaultState.user, action) {
   switch (action.type) {
     case USER_LOGGED:
       return { ...state, data: action.payload };
+    case USER_LOGOUT:
+      return { ...state, data: {} };
     default:
       return state;
   }

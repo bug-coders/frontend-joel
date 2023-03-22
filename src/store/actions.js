@@ -22,6 +22,7 @@ import {
   API_TAGS_LOADED_SUCCESS,
   UI_RESET_ERROR,
   USER_LOGGED,
+  USER_LOGOUT,
 } from './types.js';
 
 ////////// AUTH_LOGIN
@@ -45,9 +46,8 @@ export const authLogin = (credentials, rememberMe) => {
     try {
       dispatch(authLoginRequest());
       const user = await api.auth.login(credentials, rememberMe);
-      console.log('🚀 ~ file: actions.js:48 ~ user:', user);
       dispatch(authLoginSuccess());
-      dispatch(userData(user));
+      dispatch(userLogged(user));
     } catch (error) {
       dispatch(authLoginFailure(error));
       throw error;
@@ -76,6 +76,7 @@ export const authLogout = () => {
       dispatch(authLogoutRequest());
       await api.auth.logout();
       dispatch(authLogoutSuccess());
+      dispatch(userLogout());
     } catch (error) {
       dispatch(authLoginFailure(error));
       throw error;
@@ -243,7 +244,11 @@ export const uiResetError = () => ({
 
 //////////// User
 
-export const userData = (userData) => ({
+export const userLogged = (userData) => ({
   type: USER_LOGGED,
   payload: userData,
+});
+
+export const userLogout = () => ({
+  type: USER_LOGOUT,
 });
