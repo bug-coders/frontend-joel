@@ -6,10 +6,14 @@ import iconI from '../../assets/icons/Instagram.png';
 import logo from '../../assets/wakapop propio.png';
 import topm from '../../assets/top-menu.png';
 import Button from '../Button';
+
 import './Layout.css';
+import { getIsLogged } from '../../store/selectors.js';
+import { useSelector } from 'react-redux';
 
 const Layout = ({ children, onLogout, ...props }) => {
   const [confirmLogout, setConfirmLogout] = useState(false);
+  const isLogged = useSelector(getIsLogged) || false;
 
   const askLogoutConfirmation = () => {
     setConfirmLogout(!confirmLogout);
@@ -19,7 +23,7 @@ const Layout = ({ children, onLogout, ...props }) => {
       <header className="header">
         <div>
           <Link className="header-logo" to="/adverts">
-            <img className='logo' src={logo} alt="Wusikando" />
+            <img className="logo" src={logo} alt="Wusikando" />
           </Link>
         </div>
         <div className="header-navbar">
@@ -29,29 +33,40 @@ const Layout = ({ children, onLogout, ...props }) => {
           <NavLink className="navlinks" to="/adverts/new">
             Crear Anuncio
           </NavLink>
-          <NavLink to="/registrar" className="navlinks">
-            Registrar usuario
-          </NavLink>
         </div>
-        <div className="header-logout">
-          {confirmLogout && (
-            <div>
-              ¿Seguro que hacer logout?{' '}
+        {!isLogged && (
+          <div>
+            <NavLink to="/registrar" className="navlinks">
+              Registrarse
+            </NavLink>
+            <NavLink to="/login" className="navlinks">
+              Login
+            </NavLink>
+          </div>
+        )}
+        {isLogged && (
+          <div className="header-logout">
+            {confirmLogout && (
               <div>
-                <Button onClick={onLogout}>Sí</Button>
+                ¿Seguro que hacer logout?{' '}
+                <div>
+                  <Button onClick={onLogout}>Sí</Button>
+                </div>
+                <div>
+                  <Button onClick={askLogoutConfirmation}>No</Button>
+                </div>
               </div>
-              <div>
-                <Button onClick={askLogoutConfirmation}>No</Button>
-              </div>
-            </div>
-          )}
-          {!confirmLogout && <Button onClick={askLogoutConfirmation}>Logout</Button>}
-        </div>
+            )}
+            {!confirmLogout && <Button onClick={askLogoutConfirmation}>Logout</Button>}
+          </div>
+        )}
       </header>
       <div className="bodyHead">
         <div className="header-navbar-mob">
           <details className="lista-detalle">
-            <summary><img className="icontop" src={topm} alt="Menu" /></summary>
+            <summary>
+              <img className="icontop" src={topm} alt="Menu" />
+            </summary>
             <ul>
               <li>
                 <NavLink className="navlinks" to="/adverts" end>
