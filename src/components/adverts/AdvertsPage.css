@@ -109,7 +109,7 @@ ul {
 }
 
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 599px) {
   .advert-container {
     width: 150px;
     height: 150px;
@@ -124,7 +124,7 @@ ul {
   }
 
   .adsGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
@@ -144,39 +144,41 @@ ul {
   }
 }
 
-/* @media screen and (min-width: 610px) {
+@media screen and (min-width: 600px) {
   .adsGrid {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-} */
-/* @media screen and (min-width: 811px) {
-  .adsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3px;
-    padding: 3px;
-    margin: 0px;
-  }
-} */
-
-@media screen and (min-width: 930px) {
-  .adsGrid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 3px;
-    padding: 3px;
-    margin: 0px;
+  
+}
+@media screen and (max-width: 901px) {
+  .superContAds {
+    margin: 5px;
+    flex-direction: column;
   }
 }
 
-@media screen and (min-width: 1187px) {
+@media screen and (min-width: 913px) {
+  .adsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
+  }
+
+  
+}
+
+@media screen and (min-width: 1185px) {
   .adsGrid {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
+ 
 }
 
 @media screen and (min-width: 1485px) {
