@@ -149,11 +149,11 @@ const Filters = ({ getAdvertsFilter }) => {
       </div>
       <div className="divelista">
         <details className="lista-detalle-filtro">
-          <summary>
-            <h3>Filtros-</h3>
+          <summary className='filtroLista'>
+            <h3 className='TitFil'>Filtros-</h3>
             <img className="icontop" src={filtr} alt="Menu" />
           </summary>
-          <ul>
+          <ul className='listaPleg'>
             <li>
               <input
                 type="text"
@@ -167,8 +167,8 @@ const Filters = ({ getAdvertsFilter }) => {
             </li>
 
             <li>
+                <p className='legenda'>Tipo de anuncio:</p>
               <fieldset className="filter-fieldset-radio" onChange={handleChangeSale} value={sale}>
-                <legend>Tipo de anuncio:</legend>
 
                 <div className="radioCont">
                   <label className="radioLabel" htmlFor="bySell">

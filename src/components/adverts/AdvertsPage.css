@@ -19,6 +19,7 @@ ul {
   text-decoration: none;
 }
 
+
 .advert-container {
   width: 250px;
   height: 350px;
@@ -50,7 +51,7 @@ ul {
   grid-gap: 15px;
   padding-top: 1%;
   /* padding: 1.5rem; */
-  margin-top: 0px;
+  margin-top: 350px;
   border-radius: 15px;
   align-items: center;
   justify-content: center;
