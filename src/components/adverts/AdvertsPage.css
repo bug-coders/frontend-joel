@@ -82,12 +82,17 @@ ul {
   /* margin-right: 80px; */
 }
 
+.SsuperDIV{
+  margin-bottom: 170px;
+}
+
 .photo-container {
   border-radius: 25px;
 }
 
 .photo-container-lista {
   width: auto;
+  max-width: 100%;
   height: 185px;
   overflow: hidden;
   margin: 0px 5px 0px 5px;
