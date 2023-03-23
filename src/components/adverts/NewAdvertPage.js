@@ -10,6 +10,7 @@ import Button from '../Button';
 
 const NewAdvertPage = ({ onLogout }) => {
   const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [sale, setSale] = useState('');
   const apiTags = useSelector(getApiTags);
   const [tags, setTags] = useState([]);
@@ -29,6 +30,10 @@ const NewAdvertPage = ({ onLogout }) => {
 
   const handleChangeName = (event) => {
     setName(event.target.value);
+  };
+
+  const handleChangeDescription = (event) => {
+    setDescription(event.target.value);
   };
 
   const handleChangeSale = (event) => {
@@ -56,6 +61,7 @@ const NewAdvertPage = ({ onLogout }) => {
     event.preventDefault();
     try {
       formData.append('name', name);
+      formData.append('description', description);
       formData.append('sale', sale);
       formData.append('price', price);
       formData.append('tags', tags);
@@ -72,7 +78,8 @@ const NewAdvertPage = ({ onLogout }) => {
     }
   };
 
-  const isDisabled = () => !(name && (sale || !sale) && tags.length && price) || isLoading;
+  const isDisabled = () =>
+    !(name && (sale || !sale) && tags.length && price && description) || isLoading;
 
   return (
     <div>
@@ -150,6 +157,22 @@ const NewAdvertPage = ({ onLogout }) => {
                           </option>
                         ))}
                       </select>
+                    </div>
+
+                    <div>
+                      <label className="labPrice" htmlFor="description">
+                        Descripción
+                      </label>
+                      <textarea
+                        name="description"
+                        id="description"
+                        rows="10"
+                        cols="50"
+                        maxLength="400"
+                        placeholder="Descripción"
+                        onChange={handleChangeDescription}
+                        value={description}
+                      />
                     </div>
 
                     <input

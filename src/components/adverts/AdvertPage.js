@@ -76,8 +76,9 @@ const AdvertPage = ({ onLogout }) => {
               </li>
 
               <li>{advert.price}€</li>
+              <li>{advert.description}</li>
               <li className="detLab">
-                Categoría/s: {advert.tags ? advert.tags.join(', ') : advert.tags}
+                <strong>Categoría/s:</strong> {advert.tags ? advert.tags.join(', ') : advert.tags}
               </li>
             </ul>
           )}
