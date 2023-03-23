@@ -113,7 +113,7 @@ const AdvertsPage = ({ onLogout }) => {
                 <Link to="/adverts/new">publica un anuncio.</Link>
               </div>
             )}
-            {filteredAdverts.slice(0, visible).map((advert) => (
+            {filteredAdverts.reverse().slice(0, visible).map((advert) => (
               <li key={advert._id}>
                 <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
                   <ul className="advert-container">
