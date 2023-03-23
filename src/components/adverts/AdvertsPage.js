@@ -62,9 +62,7 @@ const AdvertsPage = ({ onLogout }) => {
       if (prevAds > filteredAdverts) {
         setIsCompleted(true);
         return moreAds;
-      } else {
-        setIsCompleted(false);
-      }
+      } 
       return prevAds;
     });
   };
