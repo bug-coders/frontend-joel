@@ -23,6 +23,12 @@ export const createAdvert = (formData) => {
   return client.post(url, formData, config);
 };
 
+export const editAdvert = (formData, id) => {
+  const config = { 'Content-Type': 'multipart/form-data' };
+  const url = `${advertsUrl}/${id}`;
+  return client.put(url, formData, config);
+};
+
 export const getTags = () => {
   const url = `${advertsUrl}/tags`;
   return client.get(url);

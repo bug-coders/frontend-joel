@@ -1,23 +1,28 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { advertCreate, apiTagsLoad } from '../../store/actions.js';
-import { getApiTags, getUi, getUser } from '../../store/selectors.js';
+import { useNavigate, useParams } from 'react-router';
+import { advertEdit, apiTagsLoad } from '../../store/actions.js';
+import { getAdvertByIdRedux, getApiTags, getUi, getUser } from '../../store/selectors.js';
 import Layout from '../layout/Layout.js';
 import './NewAdvertPage.css';
 import money from '../../assets/moneyB.png';
 import Button from '../Button';
 
-const NewAdvertPage = ({ onLogout }) => {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [sale, setSale] = useState('');
+const EditAdvertPage = ({ onLogout }) => {
+  const { id } = useParams();
+
+  const advert = useSelector(getAdvertByIdRedux(id));
+
+  const [name, setName] = useState(advert?.name);
+  const [description, setDescription] = useState(advert?.description);
+  const [sale, setSale] = useState(advert?.sale);
   const apiTags = useSelector(getApiTags);
-  const [tags, setTags] = useState([]);
-  const [price, setPrice] = useState('');
-  const [photo, setPhoto] = useState(null);
+  const [tags, setTags] = useState(advert?.tags);
+  const [price, setPrice] = useState(advert?.price);
+  const [photo, setPhoto] = useState(advert?.photo || null);
   const { isLoading } = useSelector(getUi);
-  const creator = useSelector(getUser);
+  const creator = advert?.creator;
+  const user = useSelector(getUser);
 
   const formData = new FormData();
 
@@ -68,9 +73,9 @@ const NewAdvertPage = ({ onLogout }) => {
       formData.append('creator', JSON.stringify(creator));
       photo && formData.append('photo', photo);
 
-      const createdAdvert = await dispatch(advertCreate(formData));
+      const editedAdvert = await dispatch(advertEdit(formData, id));
 
-      navigate(`/adverts/${createdAdvert._id}`);
+      navigate(`/adverts/${editedAdvert._id}`);
     } catch (error) {
       if (error.status === 401) {
         navigate('/login');
@@ -89,7 +94,7 @@ const NewAdvertPage = ({ onLogout }) => {
             <div className="formCrea">
               <h1>
                 <img className="imgM" src={money} alt="Wusikando" />
-                Crea tu anuncio
+                Edita tu anuncio
                 <img className="imgM" src={money} alt="Wusikando" />
               </h1>
               <div className="adverts-create-container">
@@ -185,7 +190,7 @@ const NewAdvertPage = ({ onLogout }) => {
                     />
                   </div>
                   <Button type="submit" disabled={isDisabled()}>
-                    Publicar
+                    Editar
                   </Button>
                 </form>
               </div>
@@ -197,4 +202,4 @@ const NewAdvertPage = ({ onLogout }) => {
   );
 };
 
-export default NewAdvertPage;
+export default EditAdvertPage;

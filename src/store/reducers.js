@@ -2,6 +2,7 @@ import {
   ADVERTS_LOADED_SUCCESS,
   ADVERT_CREATED_SUCCESS,
   ADVERT_DELETED_SUCCESS,
+  ADVERT_EDITED_SUCCESS,
   ADVERT_LOADED_SUCCESS,
   API_TAGS_LOADED_SUCCESS,
   AUTH_LOGIN_SUCCESS,
@@ -46,6 +47,8 @@ export function adverts(state = defaultState.adverts, action) {
       return { ...state, data: [action.payload] };
     case ADVERT_CREATED_SUCCESS:
       return { ...state, data: [...state.data, action.payload] };
+    case ADVERT_EDITED_SUCCESS:
+      return { ...state, areLoaded: false, data: [...state.data, action.payload] };
     case ADVERT_DELETED_SUCCESS:
       const deletedAdvertList = state.data.filter((advert) => {
         return advert._id !== action.payload._id;

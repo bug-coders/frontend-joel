@@ -23,6 +23,9 @@ import {
   UI_RESET_ERROR,
   USER_LOGGED,
   USER_LOGOUT,
+  ADVERT_EDITED_REQUEST,
+  ADVERT_EDITED_SUCCESS,
+  ADVERT_EDITED_FAILURE,
 } from './types.js';
 
 ////////// AUTH_LOGIN
@@ -174,6 +177,38 @@ export const advertCreate = (formData) => {
       return createdAdvert;
     } catch (error) {
       dispatch(advertCreatedFailure(error));
+      throw error;
+    }
+  };
+};
+
+//////////// EDIT ADVERT
+
+export const advertEditedRequest = () => ({
+  type: ADVERT_EDITED_REQUEST,
+});
+
+export const advertEditedSuccess = (advert) => ({
+  type: ADVERT_EDITED_SUCCESS,
+  payload: advert,
+});
+
+export const advertEditedFailure = (error) => ({
+  type: ADVERT_EDITED_FAILURE,
+  payload: error,
+  error: true,
+});
+
+export const advertEdit = (formData, id) => {
+  return async function (dispatch, getState, { api }) {
+    try {
+      dispatch(advertEditedRequest());
+      const editedAdvert = await api.adverts.editAdvert(formData, id);
+      dispatch(advertEditedSuccess(editedAdvert));
+      dispatch(advertLoadedSuccess(editedAdvert));
+      return editedAdvert;
+    } catch (error) {
+      dispatch(advertEditedFailure(error));
       throw error;
     }
   };

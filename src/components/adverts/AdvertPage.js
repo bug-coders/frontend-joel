@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout.js';
 import './AdvertDetailPage.css';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import '../../assets/broken-1.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdvertByIdRedux, getUser } from '../../store/selectors.js';
@@ -90,6 +90,9 @@ const AdvertPage = ({ onLogout }) => {
           )}
           {user?._id === advert?.creator?._id && (
             <div className="delete-button-det">
+              <Button as={Link} to={`/adverts/edit/${id}`}>
+                Editar anuncio
+              </Button>
               {!deleteAd && <Button onClick={askDeleteAd}>Borrar anuncio</Button>}
               {deleteAd && !deletedAd && (
                 <div className="delete-confirmation">
