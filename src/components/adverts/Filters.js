@@ -14,7 +14,7 @@ const Filters = ({ getAdvertsFilter }) => {
 
   const apiTags = useSelector(getApiTags);
   const dispatch = useDispatch();
-  const filters = [name, sale, minPrice, maxPrice, tags];
+  const filters = [name.toLowerCase(), sale, minPrice, maxPrice, tags];
 
   useEffect(() => {
     dispatch(apiTagsLoad());

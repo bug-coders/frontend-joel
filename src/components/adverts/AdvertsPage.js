@@ -30,7 +30,7 @@ const AdvertsPage = ({ onLogout }) => {
   filteredAdverts = adverts.filter((advert) => {
     return (
       !filters.length ||
-      ((filters[0] === '' || advert.name.includes(filters[0])) &&
+      ((filters[0] === '' || advert.name.toLowerCase().includes(filters[0])) &&
         (filters[1] === '' || filters[1] === advert.sale) &&
         (filters[2] === '' || filters[2] <= advert.price) &&
         (filters[3] === '' || filters[3] >= advert.price) &&
