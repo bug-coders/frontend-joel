@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
-import { advertCreate, apiTagsLoad } from "../../store/actions.js";
-import { getApiTags, getUi } from "../../store/selectors.js";
-import Layout from "../layout/Layout.js";
-import "./NewAdvertPage.css";
-import money from "../../assets/moneyB.png"
-import Button from "../Button";
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { advertCreate, apiTagsLoad } from '../../store/actions.js';
+import { getApiTags, getUi, getUser } from '../../store/selectors.js';
+import Layout from '../layout/Layout.js';
+import './NewAdvertPage.css';
+import money from '../../assets/moneyB.png';
+import Button from '../Button';
 
 const NewAdvertPage = ({ onLogout }) => {
-  const [name, setName] = useState("");
-  const [sale, setSale] = useState("");
+  const [name, setName] = useState('');
+  const [sale, setSale] = useState('');
   const apiTags = useSelector(getApiTags);
   const [tags, setTags] = useState([]);
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState('');
   const [photo, setPhoto] = useState(null);
   const { isLoading } = useSelector(getUi);
+  const creator = useSelector(getUser);
 
   const formData = new FormData();
 
@@ -54,32 +55,36 @@ const NewAdvertPage = ({ onLogout }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      formData.append("name", name);
-      formData.append("sale", sale);
-      formData.append("price", price);
-      formData.append("tags", tags);
-      photo && formData.append("photo", photo);
+      formData.append('name', name);
+      formData.append('sale', sale);
+      formData.append('price', price);
+      formData.append('tags', tags);
+      formData.append('creator', JSON.stringify(creator));
+      photo && formData.append('photo', photo);
 
       const createdAdvert = await dispatch(advertCreate(formData));
+
       navigate(`/adverts/${createdAdvert._id}`);
     } catch (error) {
       if (error.status === 401) {
-        navigate("/login");
+        navigate('/login');
       }
     }
   };
 
-  const isDisabled = () =>
-    !(name && (sale || !sale) && tags.length && price) || isLoading;
+  const isDisabled = () => !(name && (sale || !sale) && tags.length && price) || isLoading;
 
   return (
     <div>
       <Layout onLogout={onLogout}>
         <div className="bodyCont">
           <div className="backimg">
-          
             <div className="formCrea">
-              <h1><img className="imgM" src={money} alt="Wusikando" />Crea tu anuncio<img className="imgM" src={money} alt="Wusikando" /></h1>
+              <h1>
+                <img className="imgM" src={money} alt="Wusikando" />
+                Crea tu anuncio
+                <img className="imgM" src={money} alt="Wusikando" />
+              </h1>
               <div className="adverts-create-container">
                 <form className="formCreate" onSubmit={handleSubmit}>
                   <div className="adverts-create">
@@ -102,24 +107,15 @@ const NewAdvertPage = ({ onLogout }) => {
                       <fieldset
                         className="filter-fieldset-radio"
                         onChange={handleChangeSale}
-                        value={sale}>
+                        value={sale}
+                      >
                         <legend>Tipo de anuncio:</legend>
 
                         <label htmlFor="Sell">Venta</label>
-                        <input
-                          type="radio"
-                          name="Sell"
-                          id="Sell"
-                          value={true}
-                        />
+                        <input type="radio" name="Sell" id="Sell" value={true} />
 
                         <label htmlFor="Buy">Compra</label>
-                        <input
-                          type="radio"
-                          name="Sell"
-                          id="Buy"
-                          value={false}
-                        />
+                        <input type="radio" name="Sell" id="Buy" value={false} />
                       </fieldset>
                     </div>
 
@@ -141,12 +137,13 @@ const NewAdvertPage = ({ onLogout }) => {
                     <div>
                       <label htmlFor="Tags">Tags</label>
                       <select
-                        style={{ padding: "20px" }}
+                        style={{ padding: '20px' }}
                         multiple
                         onChange={handleChangeTags}
                         name="Tags"
                         id="Tags"
-                        value={tags}>
+                        value={tags}
+                      >
                         {apiTags.map((tag) => (
                           <option key={tag} value={tag} id={tag}>
                             {`${tag.charAt(0).toUpperCase() + tag.slice(1)}`}
@@ -170,8 +167,6 @@ const NewAdvertPage = ({ onLogout }) => {
                 </form>
               </div>
             </div>
-            
-          
           </div>
         </div>
       </Layout>

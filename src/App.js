@@ -11,11 +11,16 @@ import Layout from './components/layout/Layout.js';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsLogged } from './store/selectors.js';
-import { authLogout } from './store/actions.js';
+import { authLogout, userLogged } from './store/actions.js';
+import storage from './utils/storage.js';
 
 function App() {
   const isLogged = useSelector(getIsLogged);
   const dispatch = useDispatch();
+  const user = storage.get('User');
+  if (user) {
+    dispatch(userLogged(user));
+  }
 
   const handleLogout = () => {
     dispatch(authLogout());
