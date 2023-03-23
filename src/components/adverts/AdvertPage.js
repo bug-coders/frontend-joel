@@ -84,7 +84,7 @@ const AdvertPage = ({ onLogout }) => {
                 <p>
                   <strong>¿Te interesa?</strong>
                 </p>
-                <a href={`mailto: ${advert?.creator?.email}`}>Email de contacto</a>
+                <a className='contactE' href={`mailto: ${advert?.creator?.email}`}>Email de contacto</a>
               </li>
             </ul>
           )}

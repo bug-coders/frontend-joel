@@ -9,19 +9,19 @@ body {
   border-radius: 5px;
 }
 
-.logo:hover {
+/* .logo:hover {
   animation-name: bounce;
   animation-duration: 2.5s;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
-}
+} */
 
-.buttonLogNav{
+.buttonLogNav {
   display: flex;
   flex-direction: row;
 }
 
-.buttonLogNav .navlinks button{
+.buttonLogNav .navlinks button {
   color: rgb(0, 0, 0) !important;
 }
 
@@ -90,7 +90,13 @@ body {
   display: grid;
   grid-template-columns: 50px 50px 50px;
   gap: 30px;
-  background-color: rgba(97, 39, 6, 0.233);
+  background: rgb(126, 54, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(126, 54, 2, 1) 0%,
+    rgba(207, 136, 4, 1) 38%,
+    rgba(255, 145, 0, 0.3617822128851541) 73%
+  );
 
   height: 100px;
 }
@@ -180,12 +186,12 @@ summary {
     display: none;
   }
 
-  /* @keyframes bounce {
+  @keyframes bounce {
 
   0%, 20%, 40%, 60%, 80%, 100% {transform: translateY(0);}
   10%, 30% {transform: translateY(-10px);}
   50% {transform: translateY(-5px);}
-} */
+}
 }
 
 @media screen and (max-width: 700px) {

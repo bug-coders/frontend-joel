@@ -99,6 +99,14 @@ ul {
   display: none;
 }
 
+.photoSlide {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+
 @media screen and (max-width: 810px) {
   .advert-container {
     width: 150px;
@@ -149,9 +157,7 @@ ul {
     padding: 3px;
     margin: 0px;
   }
- 
 }
-
 
 @media screen and (min-width: 1185px) {
   .adsGrid {

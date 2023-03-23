@@ -61,6 +61,7 @@ const Layout = ({ children, onLogout, ...props }) => {
             {!confirmLogout && <Button onClick={askLogoutConfirmation}>Logout</Button>}
           </div>
         )}
+              
       </header>
 
       <div className="bodyHead">

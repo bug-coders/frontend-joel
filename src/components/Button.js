@@ -14,9 +14,9 @@ const Button = styled.button`
     rgb(126, 88, 61) 0%,
     rgb(173, 127, 66) 22%,
     rgb(238, 177, 65) 40%,
-    rgba(255, 145, 0, 0.541) 52%,
-    rgba(238, 177, 65) 72%,
-    rgba(126, 88, 61) 100%
+    rgba(238, 177, 65) 52%,
+    rgba(255, 145, 0, 0.441) 72%,
+    rgba(255, 145, 0, 0.541) 100%
   );
   box-shadow: 1px -1px 1px rgba(97, 39, 6, 0.233), -1px 1px 1px rgba(97, 39, 6, 0.575);
   text-decoration: none;

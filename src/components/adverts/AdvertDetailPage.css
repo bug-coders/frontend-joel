@@ -7,6 +7,12 @@ ul {
   padding: 0px;
 }
 
+ul li .contactE{
+  text-decoration: none !important;
+  color: black;
+  
+}
+
 .advert-detail-link {
   display: flex;
   color: black;
@@ -15,7 +21,7 @@ ul {
 
 .advert-container-det {
   width: 450px;
-  height: 500px;
+  height: auto;
   padding: 30px 20px;
   margin: 0 auto 40px auto;
   
@@ -41,7 +47,7 @@ ul {
 }
 
 .photo-container-listaDet {
-  width: 350px;
+  width: auto;
   height: 350px;
 }
 
@@ -58,7 +64,6 @@ ul {
 .tituloAnuncios{
   color: rgb(0, 19, 36);
 }
-
 
 
 @media screen and (max-width: 449px) {
