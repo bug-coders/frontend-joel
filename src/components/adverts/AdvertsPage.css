@@ -74,10 +74,10 @@ ul {
 
 .superContAds {
   
-  max-width: 1560px;
+  /* max-width: 1560px; */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   padding: 1%;
   /* margin-right: 80px; */
 }
@@ -222,11 +222,11 @@ ul {
 
 }
 
-/* @media screen and (min-width: 1903px) {
+@media screen and (min-width: 1903px) {
   .adsGrid {
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-} */
+}

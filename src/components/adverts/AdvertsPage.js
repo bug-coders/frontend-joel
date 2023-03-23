@@ -82,7 +82,7 @@ const AdvertsPage = ({ onLogout }) => {
 
   return (
     <Layout onLogout={onLogout}>
-      <div className='superDIV'>
+      <div className='SsuperDIV'>
       <div className="superContAds">
         <div className="filterList">
           <Filters getAdvertsFilter={getAdvertsFilter} />
