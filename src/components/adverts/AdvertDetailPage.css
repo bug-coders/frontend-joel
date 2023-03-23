@@ -78,17 +78,21 @@ ul li .contactE{
 
 @media screen and (max-width: 449px) {
   .advert-container-det {
-    width: 150px;
-    height: 150px;
+    width: 85%;
+    height: 100%;
     font-size: 12px;
     margin: 5px;
   }
   .photo-container-listaDet {
-    width: 85px;
-  height: 85px;
+    width: auto;
+  height: 150px;
   overflow: hidden;
   }
   .detLab{
     font-size:smaller;
+  }
+
+  .advertsPageDet{
+    height: 500px;
   }
 }
