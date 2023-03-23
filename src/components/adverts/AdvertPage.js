@@ -80,6 +80,12 @@ const AdvertPage = ({ onLogout }) => {
               <li className="detLab">
                 <strong>Categoría/s:</strong> {advert.tags ? advert.tags.join(', ') : advert.tags}
               </li>
+              <li className="detLab">
+                <p>
+                  <strong>¿Te interesa?</strong>
+                </p>
+                <a href={`"mailto: ${advert?.creator?.email}"`}>Email de contacto</a>
+              </li>
             </ul>
           )}
           {user?._id === advert?.creator?._id && (
