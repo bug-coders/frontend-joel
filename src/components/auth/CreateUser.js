@@ -39,18 +39,22 @@ const CreateUser = () => {
     const password = data.password;
     const rememberMe = true;
 
-    await dispatch(registerUser(data));
-    await dispatch(authLogin({ email, password }, rememberMe));
-    const to = location.state?.from?.pathname || '/';
-    navigate(to, { replace: true });
+    const registeredUser = await dispatch(registerUser(data));
+    if (registeredUser.error) {
+      throw new Error('El registro ha fallado');
+    } else {
+      await dispatch(authLogin({ email, password }, rememberMe));
+      const to = location.state?.from?.pathname || '/';
+      navigate(to, { replace: true });
+    }
   };
 
   return (
     <div className="formMain">
       <div className="formCont">
         <div className="logoCont">
-        <Link className="header-logo" to="/adverts">
-            <img className='logoReg' src={logo} alt="Wusikando" />
+          <Link className="header-logo" to="/adverts">
+            <img className="logoReg" src={logo} alt="Wusikando" />
           </Link>
         </div>
         <div className="formcontainer">
