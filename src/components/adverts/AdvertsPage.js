@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout.js';
 import './AdvertsPage.css';
 import './carruselSlide.css';
-import img1 from '../../assets/carrusell imagenes/img1.png';
-import img2 from '../../assets/carrusell imagenes/img2.png';
-import img3 from '../../assets/carrusell imagenes/img3.png';
-import img4 from '../../assets/carrusell imagenes/img4.png';
-import img5 from '../../assets/carrusell imagenes/img5.png';
-import img6 from '../../assets/carrusell imagenes/img6.png';
+// import img1 from '../../assets/carrusell imagenes/img1.png';
+// import img2 from '../../assets/carrusell imagenes/img2.png';
+// import img3 from '../../assets/carrusell imagenes/img3.png';
+// import img4 from '../../assets/carrusell imagenes/img4.png';
+// import img5 from '../../assets/carrusell imagenes/img5.png';
+// import img6 from '../../assets/carrusell imagenes/img6.png';
 import { Link } from 'react-router-dom';
 import broken from '../../assets/broken-1.png';
 import Filters from './Filters.js';
@@ -47,7 +47,7 @@ const AdvertsPage = ({ onLogout }) => {
 
   return (
     <Layout onLogout={onLogout}>
-      <div className='photoSlide'>
+      {/* <div className='photoSlide'>
       <section class="slideshow">
         <div class="content">
             <div class="content-carrusel">
@@ -64,7 +64,7 @@ const AdvertsPage = ({ onLogout }) => {
         </div>
     </section>
 
-      </div>
+      </div> */}
       <div className="superContAds">
         <div className="filterList">
           <Filters getAdvertsFilter={getAdvertsFilter} />

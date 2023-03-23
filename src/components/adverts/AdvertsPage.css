@@ -53,6 +53,8 @@ ul {
   margin-top: 0px;
   border-radius: 15px;
   align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .superContAds {
@@ -107,7 +109,7 @@ ul {
 }
 
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 930px) {
   .advert-container {
     width: 150px;
     height: 150px;
@@ -122,7 +124,7 @@ ul {
   }
 
   .adsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
@@ -150,16 +152,16 @@ ul {
     margin: 0px;
   }
 } */
-@media screen and (min-width: 811px) {
+/* @media screen and (min-width: 811px) {
   .adsGrid {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-}
+} */
 
-@media screen and (min-width: 1185px) {
+@media screen and (min-width: 1193px) {
   .adsGrid {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
@@ -168,18 +170,18 @@ ul {
   }
 }
 
-@media screen and (min-width: 1470px) {
+/* @media screen and (min-width: 1470px) {
   .adsGrid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-}
+} */
 
-@media screen and (min-width: 1777px) {
+@media screen and (min-width: 1193px) {
   .adsGrid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;

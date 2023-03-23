@@ -75,7 +75,12 @@ body {
 .lista-detalle {
   width: 100%;
   border: 1px solid #c0d2df;
-  background: #4a505531;
+  background: rgb(126, 54, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(207, 136, 4, 0.418) 38%,
+    rgba(255, 145, 0, 0.3617822128851541) 70%
+  );
   padding: 5px 10px;
   border-radius: 8px;
   color: rgb(5, 4, 59);
@@ -167,7 +172,7 @@ summary {
   animation-iteration-count: infinite;
 }
 
-@media screen and (min-width: 699px) {
+@media screen and (min-width: 850px) {
   .iconFoot {
     border-radius: 15px;
   }
@@ -194,7 +199,7 @@ summary {
 }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 851px) {
   .header-navbar {
     display: none;
   }
