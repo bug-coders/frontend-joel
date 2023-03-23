@@ -13,7 +13,6 @@ import iconT from '../../assets/icons/Twitter.png';
 import iconF from '../../assets/icons/Facebook.png';
 import iconI from '../../assets/icons/Instagram.png';
 import './CreatePage.css';
-import './LoginPage.css';
 
 const CreateUser = () => {
   const [customError, setCustomError] = useState(null);
