@@ -14,6 +14,7 @@ import Filters from './Filters.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { advertsLoad } from '../../store/actions.js';
 import { getAdvertsRedux } from '../../store/selectors.js';
+import Button from '../Button.js';
 
 const AdvertsPage = ({ onLogout }) => {
   const adverts = useSelector(getAdvertsRedux) || [];
@@ -33,6 +34,32 @@ const AdvertsPage = ({ onLogout }) => {
   };
 
   let filteredAdverts = adverts;
+  const [visible, setVisible] = useState(6);
+  
+  const [isCompleted, setIsCompleted] = useState(false);
+  const moreAds = adverts.length;
+
+  const nextAds = () => {
+    setVisible((prevValue) => {
+      const nextAds = prevValue + 6;
+      if (nextAds > filteredAdverts) {
+        setIsCompleted(true);
+        return moreAds;
+      }
+      return nextAds;
+    });
+  };
+
+  const prevAds = () => {
+    setVisible((prevValue) => {
+      const nextAds = prevValue - 6;
+      if (nextAds > filteredAdverts) {
+        setIsCompleted(true);
+        return moreAds;
+      }
+      return nextAds;
+    });
+  };
 
   filteredAdverts = adverts.filter((advert) => {
     return (
@@ -79,7 +106,7 @@ const AdvertsPage = ({ onLogout }) => {
                 <Link to="/adverts/new">publica un anuncio.</Link>
               </div>
             )}
-            {filteredAdverts.reverse().map((advert) => (
+            {filteredAdverts.slice(0, visible).map((advert) => (
               <li key={advert._id}>
                 <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
                   <ul className="advert-container">
@@ -120,6 +147,17 @@ const AdvertsPage = ({ onLogout }) => {
           </div>
         )}
       </div>
+      <div className='botoneraAds'>
+        
+        <Button onClick={nextAds} disabled={isCompleted}>
+        {("ver mas instrumentos ")}
+        </Button> 
+        <Button onClick={prevAds} disabled={isCompleted}>
+          {("ver menos instrumentos ")}
+        </Button>
+        
+      </div>
+      <strong>{visible} de {moreAds}</strong>
     </Layout>
   );
 };

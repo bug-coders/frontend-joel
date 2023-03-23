@@ -59,6 +59,12 @@ ul {
   align-content: center;
 }
 
+.botoneraAds{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .superContAds {
   display: flex;
   padding: 1%;
