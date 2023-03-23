@@ -34,14 +34,14 @@ const AdvertsPage = ({ onLogout }) => {
   };
 
   let filteredAdverts = adverts;
-  const [visible, setVisible] = useState(6);
+  const [visible, setVisible] = useState(4);
   
   const [isCompleted, setIsCompleted] = useState(false);
   const moreAds = adverts.length;
 
   const nextAds = () => {
     setVisible((prevValue) => {
-      const nextAds = prevValue + 6;
+      const nextAds = prevValue + 4;
       if (nextAds > filteredAdverts) {
         setIsCompleted(true);
         return moreAds;
@@ -52,12 +52,14 @@ const AdvertsPage = ({ onLogout }) => {
 
   const prevAds = () => {
     setVisible((prevValue) => {
-      const nextAds = prevValue - 6;
-      if (nextAds > filteredAdverts) {
+      const prevAds = prevValue - 4;
+      if (prevAds > filteredAdverts) {
         setIsCompleted(true);
         return moreAds;
+      }else{
+        setIsCompleted(false);
       }
-      return nextAds;
+      return prevAds;
     });
   };
 
@@ -149,12 +151,12 @@ const AdvertsPage = ({ onLogout }) => {
       </div>
       <div className='botoneraAds'>
         
-        <Button onClick={nextAds} disabled={isCompleted}>
-        {("ver mas instrumentos ")}
-        </Button> 
         <Button onClick={prevAds} disabled={isCompleted}>
           {("ver menos instrumentos ")}
         </Button>
+        <Button onClick={nextAds} disabled={isCompleted}>
+        {("ver mas instrumentos ")}
+        </Button> 
         
       </div>
       <strong>{visible} de {moreAds}</strong>
