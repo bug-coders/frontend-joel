@@ -5,17 +5,23 @@ import LoginPage from './components/auth/LoginPage.js';
 import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import AdvertPage from './components/adverts/AdvertPage.js';
 import NewAdvertPage from './components/adverts/NewAdvertPage.js';
+import EditAdvertPage from './components/adverts/EditAdvertPage.js';
 import RequireAuth from './components/auth/RequireAuth.js';
 import CreateUser from './components/auth/CreateUser';
 import Layout from './components/layout/Layout.js';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIsLogged } from './store/selectors.js';
-import { authLogout } from './store/actions.js';
+import { authLogout, userLogged } from './store/actions.js';
+import storage from './utils/storage.js';
 
 function App() {
   const isLogged = useSelector(getIsLogged);
   const dispatch = useDispatch();
+  const user = storage.get('User');
+  if (user) {
+    dispatch(userLogged(user));
+  }
 
   const handleLogout = () => {
     dispatch(authLogout());
@@ -34,6 +40,14 @@ function App() {
           element={
             <RequireAuth isLogged={isLogged}>
               <NewAdvertPage onLogout={handleLogout} />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/adverts/edit/:id"
+          element={
+            <RequireAuth isLogged={isLogged}>
+              <EditAdvertPage onLogout={handleLogout} />
             </RequireAuth>
           }
         />

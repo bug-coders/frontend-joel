@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout.js';
 import './AdvertDetailPage.css';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import '../../assets/broken-1.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAdvertByIdRedux } from '../../store/selectors.js';
+import { getAdvertByIdRedux, getUser } from '../../store/selectors.js';
 import { advertDelete, advertLoad } from '../../store/actions.js';
 import broken from '../../assets/broken-1.png';
-import Button from "../Button";
+import Button from '../Button';
 
 const AdvertPage = ({ onLogout }) => {
   const { id } = useParams();
 
   const advert = useSelector(getAdvertByIdRedux(id)) || {};
+  const user = useSelector(getUser) || {};
   const dispatch = useDispatch();
   const [deleteAd, setDeleteAd] = useState(false);
   const [deletedAd, setDeletedAd] = useState(false);
@@ -75,22 +76,36 @@ const AdvertPage = ({ onLogout }) => {
               </li>
 
               <li>{advert.price}€</li>
-              <li className='detLab' >Categoría/s: {advert.tags ? advert.tags.join(', ') : advert.tags}</li>
+              <li>{advert.description}</li>
+              <li className="detLab">
+                <strong>Categoría/s:</strong> {advert.tags ? advert.tags.join(', ') : advert.tags}
+              </li>
+              <li className="detLab">
+                <p>
+                  <strong>¿Te interesa?</strong>
+                </p>
+                <a href={`mailto: ${advert?.creator?.email}`}>Email de contacto</a>
+              </li>
             </ul>
           )}
-          <div className="delete-button-det">
-            {!deleteAd && <Button onClick={askDeleteAd}>Borrar anuncio</Button>}
-            {deleteAd && !deletedAd && (
-              <div className="delete-confirmation">
-                <p> ¿Seguro? No podrás recuperar este anuncio.</p>
-                <div>
-                  <Button onClick={handleDeleteAd}>Confirmar</Button>
-                  <Button onClick={askDeleteAd}>Cancelar</Button>
+          {user?._id === advert?.creator?._id && (
+            <div className="delete-button-det">
+              <Button as={Link} to={`/adverts/edit/${id}`}>
+                Editar anuncio
+              </Button>
+              {!deleteAd && <Button onClick={askDeleteAd}>Borrar anuncio</Button>}
+              {deleteAd && !deletedAd && (
+                <div className="delete-confirmation">
+                  <p> ¿Seguro? No podrás recuperar este anuncio.</p>
+                  <div>
+                    <Button onClick={handleDeleteAd}>Confirmar</Button>
+                    <Button onClick={askDeleteAd}>Cancelar</Button>
+                  </div>
                 </div>
-              </div>
-            )}
-            {deletedAd && <div>¡El anuncio ha sido borrado!</div>}
-          </div>
+              )}
+              {deletedAd && <div>¡El anuncio ha sido borrado!</div>}
+            </div>
+          )}
         </div>
       </Layout>
     </div>

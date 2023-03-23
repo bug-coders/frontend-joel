@@ -21,6 +21,11 @@ import {
   AUTH_LOGOUT_SUCCESS,
   API_TAGS_LOADED_SUCCESS,
   UI_RESET_ERROR,
+  USER_LOGGED,
+  USER_LOGOUT,
+  ADVERT_EDITED_REQUEST,
+  ADVERT_EDITED_SUCCESS,
+  ADVERT_EDITED_FAILURE,
 } from './types.js';
 
 ////////// AUTH_LOGIN
@@ -43,8 +48,9 @@ export const authLogin = (credentials, rememberMe) => {
   return async function (dispatch, getState, { api }) {
     try {
       dispatch(authLoginRequest());
-      await api.auth.login(credentials, rememberMe);
+      const user = await api.auth.login(credentials, rememberMe);
       dispatch(authLoginSuccess());
+      dispatch(userLogged(user));
     } catch (error) {
       dispatch(authLoginFailure(error));
       throw error;
@@ -73,6 +79,7 @@ export const authLogout = () => {
       dispatch(authLogoutRequest());
       await api.auth.logout();
       dispatch(authLogoutSuccess());
+      dispatch(userLogout());
     } catch (error) {
       dispatch(authLoginFailure(error));
       throw error;
@@ -175,6 +182,38 @@ export const advertCreate = (formData) => {
   };
 };
 
+//////////// EDIT ADVERT
+
+export const advertEditedRequest = () => ({
+  type: ADVERT_EDITED_REQUEST,
+});
+
+export const advertEditedSuccess = (advert) => ({
+  type: ADVERT_EDITED_SUCCESS,
+  payload: advert,
+});
+
+export const advertEditedFailure = (error) => ({
+  type: ADVERT_EDITED_FAILURE,
+  payload: error,
+  error: true,
+});
+
+export const advertEdit = (formData, id) => {
+  return async function (dispatch, getState, { api }) {
+    try {
+      dispatch(advertEditedRequest());
+      const editedAdvert = await api.adverts.editAdvert(formData, id);
+      dispatch(advertEditedSuccess(editedAdvert));
+      dispatch(advertLoadedSuccess(editedAdvert));
+      return editedAdvert;
+    } catch (error) {
+      dispatch(advertEditedFailure(error));
+      throw error;
+    }
+  };
+};
+
 //////////// DELETE ADVERT
 
 export const advertDeletedRequest = () => ({
@@ -236,4 +275,15 @@ export const apiTagsLoad = () => {
 
 export const uiResetError = () => ({
   type: UI_RESET_ERROR,
+});
+
+//////////// User
+
+export const userLogged = (userData) => ({
+  type: USER_LOGGED,
+  payload: userData,
+});
+
+export const userLogout = () => ({
+  type: USER_LOGOUT,
 });
