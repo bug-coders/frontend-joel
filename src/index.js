@@ -14,9 +14,7 @@ const store = configureStore({ auth: !!accessToken });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Root store={store}>
-      <App />
-    </Root>
-  </React.StrictMode>
+  <Root store={store}>
+    <App />
+  </Root>
 );
