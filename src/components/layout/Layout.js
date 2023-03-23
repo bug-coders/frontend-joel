@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import iconT from '../../assets/icons/Twitter.png';
-import iconF from '../../assets/icons/Facebook.png';
-import iconI from '../../assets/icons/Instagram.png';
+import arr1 from '../../assets/arrow1.png';
+import arr2 from '../../assets/arrow2.png';
+import iconG from '../../assets/gitIcon.png'
 import logo from '../../assets/wakapop propio.png';
 import topm from '../../assets/top-menu.png';
 import Button from '../Button';
@@ -94,21 +94,16 @@ const Layout = ({ children, onLogout, ...props }) => {
       </div>
       {children}
       <footer className="footer">
+      <div>
+            <img className="iconArr" src={arr1} alt="arrow" />
+        </div>
+        <h5>Vista nuestro repo</h5>
         <div>
-          <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer">
-            <img className="iconFoot" src={iconT} alt="twitter logo" />
+          <a href="https://github.com/bug-coders" target="_blank" rel="noopener noreferrer">
+            <img className="iconFoot" src={iconG} alt="githubRepo" />
           </a>
         </div>
-        <div>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-            <img className="iconFoot" src={iconI} alt="instagram" />
-          </a>
-        </div>
-        <div>
-          <a href="https://es-es.facebook.com/" target="_blank" rel="noopener noreferrer">
-            <img className="iconFoot" src={iconF} alt="Facebook" />
-          </a>
-        </div>
+        
       </footer>
     </div>
   );

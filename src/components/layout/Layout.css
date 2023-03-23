@@ -154,6 +154,11 @@ body {
   filter: grayscale(55%);
 }
 
+.iconArr{
+  border-radius: 10px;
+  width: 100%;
+}
+
 .icontop {
   width: 25px;
   transform: rotate(-180deg);
