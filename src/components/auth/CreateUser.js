@@ -39,7 +39,6 @@ const CreateUser = () => {
     const rememberMe = true;
 
     const registeredUser = await dispatch(registerUser(data));
-    console.log('🚀 ~ file: CreateUser.js:42 ~ submitForm ~ registeredUser:', registeredUser);
     if (registeredUser.error) {
       throw new Error('El registro ha fallado');
     } else {
