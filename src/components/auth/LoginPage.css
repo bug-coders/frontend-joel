@@ -52,6 +52,7 @@ label {
 .buttonLog{
   text-decoration: none !important;
   color: black !important;
+  width: 106px !important;
 }
 
 .loginPageTitle {

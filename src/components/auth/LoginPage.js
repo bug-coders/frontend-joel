@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../../assets/wakapop propio.png';
-import './LoginPage.css';
-import Button from '../Button';
-import { useDispatch, useSelector } from 'react-redux';
-import { authLogin, uiResetError } from '../../store/actions.js';
-import { getUi } from '../../store/selectors.js';
+import { useState } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import logo from "../../assets/wakapop propio.png";
+import "./LoginPage.css";
+import Button from "../Button";
+import { useDispatch, useSelector } from "react-redux";
+import { authLogin, uiResetError } from "../../store/actions.js";
+import { getUi } from "../../store/selectors.js";
 
 const LoginPage = ({ onLogin, ...props }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const { isLoading, error } = useSelector(getUi);
 
@@ -27,7 +27,7 @@ const LoginPage = ({ onLogin, ...props }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await dispatch(authLogin({ email, password }, rememberMe));
-    const to = location.state?.from?.pathname || '/';
+    const to = location.state?.from?.pathname || "/";
     navigate(to, { replace: true });
   };
 
@@ -78,7 +78,10 @@ const LoginPage = ({ onLogin, ...props }) => {
           />
         </div>
         <div className="submit-form">
-          <Button type="submit" className="button" disabled={!isButtonEnabled()}>
+          <Button
+            type="submit"
+            className="button"
+            disabled={!isButtonEnabled()}>
             Login
           </Button>
           <Button className="buttonLog">
@@ -88,6 +91,11 @@ const LoginPage = ({ onLogin, ...props }) => {
           </Button>
         </div>
       </form>
+          <Button className="button-sign">
+            <NavLink className="navlinksButt" to="/">
+              Volver
+            </NavLink>
+          </Button>
       {error && (
         <div className="error-message" onClick={resetError}>
           {error.message}
