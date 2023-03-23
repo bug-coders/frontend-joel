@@ -35,6 +35,16 @@ ul li .contactE{
   transition: all .25s linear;
 }
 
+.photo-container-contact{
+  width: 170px;
+}
+
+.photo-container-contact:hover{
+  
+  transition: all 0.25s linear;
+  width: 200px;
+}
+
 .advertsPageDet{
   display: flex;
   justify-content: center;

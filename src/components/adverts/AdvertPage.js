@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout.js';
 import './AdvertDetailPage.css';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-import '../../assets/broken-1.png';
+import contact from '../../assets/contact.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdvertByIdRedux, getUser } from '../../store/selectors.js';
 import { advertDelete, advertLoad } from '../../store/actions.js';
@@ -84,7 +84,7 @@ const AdvertPage = ({ onLogout }) => {
                 <p>
                   <strong>¿Te interesa?</strong>
                 </p>
-                <a className='contactE' href={`mailto: ${advert?.creator?.email}`}>Email de contacto</a>
+                <a className='contactE' href={`mailto: ${advert?.creator?.email}`}><img className="photo-container-contact" src={contact} alt="contacto" /></a>
               </li>
             </ul>
           )}

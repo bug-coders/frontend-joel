@@ -13,6 +13,7 @@ import iconT from '../../assets/icons/Twitter.png';
 import iconF from '../../assets/icons/Facebook.png';
 import iconI from '../../assets/icons/Instagram.png';
 import './CreatePage.css';
+import './LoginPage.css';
 
 const CreateUser = () => {
   const [customError, setCustomError] = useState(null);
@@ -55,13 +56,13 @@ const CreateUser = () => {
         <div className="formcontainer">
           {/* <img className="imgAdd" src={sax} alt="Wusikando" /> */}
           <form onSubmit={handleSubmit(submitForm)} className="form-page-container-sign">
-            <h1 className="form-title-sign"> {'Sign up'} </h1>
+            <h1 className="form-title-sign"> {'Registro'} </h1>
 
             <div className="form-group-sign">
               <input
                 type="text"
                 className="form-input-sign"
-                placeholder={'Name'}
+                placeholder={'Nombre de usuario'}
                 {...register('name')}
                 required
               />

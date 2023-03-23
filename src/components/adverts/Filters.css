@@ -7,13 +7,13 @@
     rgb(238, 206, 146) 38%,
     rgb(255, 216, 164) 70%
   );
-  box-shadow: 3px 3px 1px rgba(97, 39, 6, 0.13), 0px 0px 25px rgba(97, 39, 6, 0.253);
+  box-shadow: 3px 3px 1px rgba(97, 39, 6, 0.13),
+    0px 0px 25px rgba(97, 39, 6, 0.253);
   padding: 0%;
   margin: 0px;
 }
 
 .filterList {
-  /* height: 50px; */
   margin: 0px 20px 0px 0px;
   border-radius: 15px;
   width: 100%;
@@ -25,26 +25,24 @@
   justify-content: center;
   flex-direction: column;
   width: auto;
-  
 }
 
-.legenda{
+.legenda {
   box-shadow: 2px -2px 2px rgba(97, 39, 6, 0.233),
     -2px 2px 1px rgba(97, 39, 6, 0.575);
-    margin: 0px;
-    padding-top: 5px;
-    font-size: larger;
-    font-weight: bolder;
-    border-radius: 10px;
+  margin: 0px;
+  padding-top: 5px;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 10px;
 }
-
 
 .filter-fieldset-radio {
   display: flex;
   justify-content: center;
   border-color: transparent;
   padding: 0px;
-  margin: 0px ;
+  margin: 0px;
   font-weight: bold;
 }
 
@@ -84,26 +82,26 @@ option {
   margin: 10px 10px 0px -15px;
 } */
 
-.filtroLista{
+.filtroLista {
   height: auto;
   padding: 0px;
 }
 
-.TitFil{
+.TitFil {
   margin: 0px 0px 5px 0px;
   padding: 0px;
 }
 
-.divelista{
+.divelista {
   padding: 0%;
   height: auto;
 }
 
-.listaPleg{
+.listaPleg {
   width: auto;
 }
 
-.filter-fieldset-tags{
+.filter-fieldset-tags {
   margin: 3px;
 }
 
@@ -113,18 +111,22 @@ option {
   margin: 0%;
 }
 
-.select-lista{
-  margin:15px;
+.select-lista {
+  margin: 15px;
   border-radius: 8px;
 }
 
-.inputLista{
-  width:100%;
+.inputLista {
+  width: 100%;
 }
 
 @media screen and (max-width: 609px) {
   .labFilter {
     display: none;
+  }
+
+  .filterList {
+    height: 50px;
   }
 
   .adverts-filters {
