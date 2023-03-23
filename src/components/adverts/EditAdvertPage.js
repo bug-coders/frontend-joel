@@ -30,6 +30,12 @@ const EditAdvertPage = ({ onLogout }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (user?._id !== advert?.creator?._id) {
+      navigate('/login');
+    }
+  });
+
+  useEffect(() => {
     dispatch(apiTagsLoad());
   }, [dispatch]);
 
