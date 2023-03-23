@@ -172,6 +172,14 @@ summary {
   animation-iteration-count: infinite;
 }
 
+@media screen and (max-width: 492px) {
+
+  .buttonLogNav {
+    flex-direction: column;
+  }
+  
+}
+
 @media screen and (min-width: 850px) {
   .iconFoot {
     border-radius: 15px;
