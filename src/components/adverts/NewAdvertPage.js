@@ -1,20 +1,21 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { advertCreate, apiTagsLoad } from '../../store/actions.js';
-import { getApiTags, getUi, getUser } from '../../store/selectors.js';
-import Layout from '../layout/Layout.js';
-import './NewAdvertPage.css';
-import money from '../../assets/moneyB.png';
-import Button from '../Button';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { advertCreate, apiTagsLoad } from "../../store/actions.js";
+import { getApiTags, getUi, getUser } from "../../store/selectors.js";
+import { Link } from "react-router-dom";
+import Layout from "../layout/Layout.js";
+import "./NewAdvertPage.css";
+import money from "../../assets/moneyB.png";
+import Button from "../Button";
 
 const NewAdvertPage = ({ onLogout }) => {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [sale, setSale] = useState('');
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [sale, setSale] = useState("");
   const apiTags = useSelector(getApiTags);
   const [tags, setTags] = useState([]);
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState("");
   const [photo, setPhoto] = useState(null);
   const { isLoading } = useSelector(getUi);
   const creator = useSelector(getUser);
@@ -60,26 +61,27 @@ const NewAdvertPage = ({ onLogout }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      formData.append('name', name);
-      formData.append('description', description);
-      formData.append('sale', sale);
-      formData.append('price', price);
-      formData.append('tags', tags);
-      formData.append('creator', JSON.stringify(creator));
-      photo && formData.append('photo', photo);
+      formData.append("name", name);
+      formData.append("description", description);
+      formData.append("sale", sale);
+      formData.append("price", price);
+      formData.append("tags", tags);
+      formData.append("creator", JSON.stringify(creator));
+      photo && formData.append("photo", photo);
 
       const createdAdvert = await dispatch(advertCreate(formData));
 
       navigate(`/adverts/${createdAdvert._id}`);
     } catch (error) {
       if (error.status === 401) {
-        navigate('/login');
+        navigate("/login");
       }
     }
   };
 
   const isDisabled = () =>
-    !(name && (sale || !sale) && tags.length && price && description) || isLoading;
+    !(name && (sale || !sale) && tags.length && price && description) ||
+    isLoading;
 
   return (
     <div>
@@ -114,15 +116,24 @@ const NewAdvertPage = ({ onLogout }) => {
                       <fieldset
                         className="filter-fieldset-radio"
                         onChange={handleChangeSale}
-                        value={sale}
-                      >
+                        value={sale}>
                         <legend>Tipo de anuncio:</legend>
 
                         <label htmlFor="Sell">Venta</label>
-                        <input type="radio" name="Sell" id="Sell" value={true} />
+                        <input
+                          type="radio"
+                          name="Sell"
+                          id="Sell"
+                          value={true}
+                        />
 
                         <label htmlFor="Buy">Compra</label>
-                        <input type="radio" name="Sell" id="Buy" value={false} />
+                        <input
+                          type="radio"
+                          name="Sell"
+                          id="Buy"
+                          value={false}
+                        />
                       </fieldset>
                     </div>
 
@@ -144,13 +155,12 @@ const NewAdvertPage = ({ onLogout }) => {
                     <div>
                       <label htmlFor="Tags">Tags</label>
                       <select
-                        style={{ padding: '20px' }}
+                        style={{ padding: "20px" }}
                         multiple
                         onChange={handleChangeTags}
                         name="Tags"
                         id="Tags"
-                        value={tags}
-                      >
+                        value={tags}>
                         {apiTags.map((tag) => (
                           <option key={tag} value={tag} id={tag}>
                             {`${tag.charAt(0).toUpperCase() + tag.slice(1)}`}
@@ -186,6 +196,9 @@ const NewAdvertPage = ({ onLogout }) => {
                   </div>
                   <Button type="submit" disabled={isDisabled()}>
                     Publicar
+                  </Button>
+                  <Button className="button-sign" as={Link} to="/">
+                    Volver
                   </Button>
                 </form>
               </div>

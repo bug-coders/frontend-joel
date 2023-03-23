@@ -124,10 +124,8 @@ const AdvertPage = ({ onLogout }) => {
               {deletedAd && <div>¡El anuncio ha sido borrado!</div>}
             </div>
           )}
-            <Button className="button-sign">
-            <NavLink className="navlinksButt" to="/">
-              Volver
-            </NavLink>
+          <Button className="button-sign" as={Link} to="/">
+            Volver
           </Button>
         </div>
       </Layout>

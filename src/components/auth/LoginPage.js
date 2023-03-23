@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/wakapop propio.png";
+import { Link } from "react-router-dom";
 import "./LoginPage.css";
 import Button from "../Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -91,11 +92,9 @@ const LoginPage = ({ onLogin, ...props }) => {
           </Button>
         </div>
       </form>
-          <Button className="button-sign">
-            <NavLink className="navlinksButt" to="/">
-              Volver
-            </NavLink>
-          </Button>
+      <Button className="button-sign" as={Link} to="/">
+        Volver
+      </Button>
       {error && (
         <div className="error-message" onClick={resetError}>
           {error.message}

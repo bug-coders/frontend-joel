@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import arr1 from '../../assets/arrow1.png';
-import arr2 from '../../assets/arrow2.png';
-import iconG from '../../assets/gitIcon.png'
+import iconG from '../../assets/gitIcon.png';
 import logo from '../../assets/wakapop propio.png';
 import topm from '../../assets/top-menu.png';
 import Button from '../Button';
