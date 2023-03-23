@@ -56,8 +56,8 @@ const AdvertsPage = ({ onLogout }) => {
   const prevAds = () => {
     setVisible((prevValue) => {
       let prevAds = prevValue - 4;
-      if (prevAds <= 0) {
-        prevAds = 0;
+      if (prevAds <= 4) {
+        prevAds = 4;
       }
       if (prevAds > filteredAdverts) {
         setIsCompleted(true);
@@ -82,24 +82,6 @@ const AdvertsPage = ({ onLogout }) => {
 
   return (
     <Layout onLogout={onLogout}>
-      {/* <div className='photoSlide'>
-      <section class="slideshow">
-        <div class="content">
-            <div class="content-carrusel">
-                <figure class="shadow"><img src={img1} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img2} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img3} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img4} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img5} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img6} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img1} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img2} alt="Wusikando"/></figure>
-                <figure class="shadow"><img src={img4} alt="Wusikando" /></figure>
-            </div>
-        </div>
-    </section>
-
-      </div> */}
       <div className="superContAds">
         <div className="filterList">
           <Filters getAdvertsFilter={getAdvertsFilter} />
@@ -113,40 +95,45 @@ const AdvertsPage = ({ onLogout }) => {
                 <Link to="/adverts/new">publica un anuncio.</Link>
               </div>
             )}
-            {filteredAdverts.reverse().slice(0, visible).map((advert) => (
-              <li key={advert._id}>
-                <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
-                  <ul className="advert-container">
-                    {advert.photo.length > 0 && advert.photo[0].filename ? (
-                      <img
-                        width="50%"
-                        className="photo-container-lista"
-                        src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
-                        alt="Product"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = broken;
-                        }}
-                      />
-                    ) : (
-                      <img
-                        width="50%"
-                        className="photo-container-lista"
-                        src={broken}
-                        alt="No hay foto"
-                      />
-                    )}
-                    <li>{forSale(advert.sale)}</li>
+            {filteredAdverts
+              .reverse()
+              .slice(0, visible)
+              .map((advert) => (
+                <li key={advert._id}>
+                  <Link className="advert-detail-link" to={`/adverts/${advert._id}`}>
+                    <ul className="advert-container">
+                      {advert.photo.length > 0 && advert.photo[0].filename ? (
+                        <img
+                          width="50%"
+                          className="photo-container-lista"
+                          src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.photo[0].filename}`}
+                          alt="Product"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = broken;
+                          }}
+                        />
+                      ) : (
+                        <img
+                          width="50%"
+                          className="photo-container-lista"
+                          src={broken}
+                          alt="No hay foto"
+                        />
+                      )}
+                      <li>{forSale(advert.sale)}</li>
 
-                    <li>
-                      <strong>{advert.name}</strong>
-                    </li>
-                    <li>{advert.price}€</li>
-                    <li className="tagsF">Categoría/s: {advert.tags && advert.tags.join(', ')}</li>
-                  </ul>
-                </Link>
-              </li>
-            ))}
+                      <li>
+                        <strong>{advert.name}</strong>
+                      </li>
+                      <li>{advert.price}€</li>
+                      <li className="tagsF">
+                        Categoría/s: {advert.tags && advert.tags.join(', ')}
+                      </li>
+                    </ul>
+                  </Link>
+                </li>
+              ))}
           </ul>
         ) : (
           <div>
