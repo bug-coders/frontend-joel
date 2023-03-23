@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
-import Layout from '../layout/Layout.js';
-import './AdvertDetailPage.css';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-import contact from '../../assets/contact.png';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAdvertByIdRedux, getUser } from '../../store/selectors.js';
-import { advertDelete, advertLoad } from '../../store/actions.js';
-import broken from '../../assets/broken-1.png';
-import Button from '../Button';
+import { useEffect, useState } from "react";
+import Layout from "../layout/Layout.js";
+import "./AdvertDetailPage.css";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import contact from "../../assets/contact.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getAdvertByIdRedux, getUser } from "../../store/selectors.js";
+import { advertDelete, advertLoad } from "../../store/actions.js";
+import broken from "../../assets/broken-1.png";
+import Button from "../Button";
+import { NavLink } from "react-router-dom";
 
 const AdvertPage = ({ onLogout }) => {
   const { id } = useParams();
@@ -24,14 +25,14 @@ const AdvertPage = ({ onLogout }) => {
   useEffect(() => {
     dispatch(advertLoad(id)).catch((error) => {
       if (error.status === 404) {
-        const to = location.state?.from?.pathname || '/404';
+        const to = location.state?.from?.pathname || "/404";
         navigate(to, { replace: true });
       }
     });
   }, [id, navigate, location, dispatch]);
 
   const forSale = (sale) => {
-    return sale ? 'Vendo' : 'Compro';
+    return sale ? "Vendo" : "Compro";
   };
 
   const askDeleteAd = () => {
@@ -42,7 +43,7 @@ const AdvertPage = ({ onLogout }) => {
     dispatch(advertDelete(id));
     setDeletedAd(true);
     setTimeout(() => {
-      navigate('/adverts');
+      navigate("/adverts");
     }, 1500);
   };
 
@@ -67,7 +68,12 @@ const AdvertPage = ({ onLogout }) => {
                   }}
                 />
               ) : (
-                <img width="50%" className="photo-container-lista" src={broken} alt="No hay foto" />
+                <img
+                  width="50%"
+                  className="photo-container-lista"
+                  src={broken}
+                  alt="No hay foto"
+                />
               )}
               <li>{forSale(advert.sale)}</li>
 
@@ -78,13 +84,23 @@ const AdvertPage = ({ onLogout }) => {
               <li>{advert.price}€</li>
               <li>{advert.description}</li>
               <li className="detLab">
-                <strong>Categoría/s:</strong> {advert.tags ? advert.tags.join(', ') : advert.tags}
+                <strong>Categoría/s:</strong>{" "}
+                {advert.tags ? advert.tags.join(", ") : advert.tags}
               </li>
               <li className="detLab">
                 <p>
                   <strong>¿Te interesa?</strong>
                 </p>
-                <a className='contactE' href={`mailto: ${advert?.creator?.email}`}><img className="photo-container-contact" src={contact} alt="contacto" />Email de contacto</a>
+                <a
+                  className="contactE"
+                  href={`mailto: ${advert?.creator?.email}`}>
+                  <img
+                    className="photo-container-contact"
+                    src={contact}
+                    alt="contacto"
+                  />
+                  {advert?.creator?.email}
+                </a>
               </li>
             </ul>
           )}
@@ -93,7 +109,9 @@ const AdvertPage = ({ onLogout }) => {
               <Button as={Link} to={`/adverts/edit/${id}`}>
                 Editar anuncio
               </Button>
-              {!deleteAd && <Button onClick={askDeleteAd}>Borrar anuncio</Button>}
+              {!deleteAd && (
+                <Button onClick={askDeleteAd}>Borrar anuncio</Button>
+              )}
               {deleteAd && !deletedAd && (
                 <div className="delete-confirmation">
                   <p> ¿Seguro? No podrás recuperar este anuncio.</p>
@@ -106,6 +124,11 @@ const AdvertPage = ({ onLogout }) => {
               {deletedAd && <div>¡El anuncio ha sido borrado!</div>}
             </div>
           )}
+            <Button className="button-sign">
+            <NavLink className="navlinksButt" to="/">
+              Volver
+            </NavLink>
+          </Button>
         </div>
       </Layout>
     </div>

@@ -6,6 +6,11 @@ body {
   background-color: rgba(255, 255, 255, 0.788);
 }
 
+.superDIV{
+  display: flex;
+  justify-content: center;
+}
+
 ul {
   list-style: none;
   padding: 0px;
@@ -60,13 +65,19 @@ ul {
 }
 
 .botoneraAds{
+  margin-top: 20px;
   display: flex;
+  max-height: 60px;
   justify-content: center;
   flex-direction: row;
 }
 
 .superContAds {
+  
+  max-width: 1560px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1%;
   /* margin-right: 80px; */
 }
@@ -159,11 +170,21 @@ ul {
     padding: 3px;
     margin: 0px;
   }
+
+  .superDIV{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
   
 }
 @media screen and (max-width: 957px) {
   .superContAds {
     margin: 5px;
+    flex-direction: column;
+  }
+  .botoneraAds{
+    max-height: fit-content;
     flex-direction: column;
   }
 }
@@ -175,6 +196,8 @@ ul {
     padding: 3px;
     margin: 0px;
   }
+
+  
 
   
 }
@@ -199,11 +222,11 @@ ul {
 
 }
 
-@media screen and (min-width: 1903px) {
+/* @media screen and (min-width: 1903px) {
   .adsGrid {
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-}
+} */

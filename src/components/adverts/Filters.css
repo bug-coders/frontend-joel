@@ -18,15 +18,14 @@
   margin: 0px 20px 0px 0px;
   border-radius: 15px;
   width: 100%;
-  z-index: 1;
 }
 
-.adverts-filters {
+/* .adverts-filters {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: auto;
-}
+} */
 
 .legenda {
   box-shadow: 2px -2px 2px rgba(97, 39, 6, 0.233),
@@ -95,7 +94,6 @@ option {
 
 .divelista {
   padding: 0%;
-  height: auto;
 }
 
 .listaPleg {
@@ -126,9 +124,7 @@ option {
     display: none;
   }
 
-  .filterList {
-    height: 50px;
-  }
+  
 
   .adverts-filters {
     display: none;
@@ -170,7 +166,7 @@ option {
 
   .adverts-filters-container {
     width: 100%;
-    display: block;
+    /* display: block; */
     justify-content: center;
   }
 

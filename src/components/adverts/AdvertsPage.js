@@ -82,6 +82,7 @@ const AdvertsPage = ({ onLogout }) => {
 
   return (
     <Layout onLogout={onLogout}>
+      <div className='superDIV'>
       <div className="superContAds">
         <div className="filterList">
           <Filters getAdvertsFilter={getAdvertsFilter} />
@@ -141,6 +142,7 @@ const AdvertsPage = ({ onLogout }) => {
           </div>
         )}
       </div>
+      <div>
       <div className="botoneraAds">
         <Button onClick={prevAds} disabled={isCompleted}>
           {'Ver menos'}
@@ -152,6 +154,8 @@ const AdvertsPage = ({ onLogout }) => {
       <strong>
         {visible} de {moreAds}
       </strong>
+      </div>
+      </div>
     </Layout>
   );
 };
