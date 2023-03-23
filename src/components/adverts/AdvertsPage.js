@@ -35,13 +35,16 @@ const AdvertsPage = ({ onLogout }) => {
 
   let filteredAdverts = adverts;
   const [visible, setVisible] = useState(4);
-  
+
   const [isCompleted, setIsCompleted] = useState(false);
   const moreAds = adverts.length;
 
   const nextAds = () => {
     setVisible((prevValue) => {
-      const nextAds = prevValue + 4;
+      let nextAds = prevValue + 4;
+      if (nextAds >= filteredAdverts.length) {
+        nextAds = filteredAdverts.length;
+      }
       if (nextAds > filteredAdverts) {
         setIsCompleted(true);
         return moreAds;
@@ -52,11 +55,14 @@ const AdvertsPage = ({ onLogout }) => {
 
   const prevAds = () => {
     setVisible((prevValue) => {
-      const prevAds = prevValue - 4;
+      let prevAds = prevValue - 4;
+      if (prevAds <= 0) {
+        prevAds = 0;
+      }
       if (prevAds > filteredAdverts) {
         setIsCompleted(true);
         return moreAds;
-      }else{
+      } else {
         setIsCompleted(false);
       }
       return prevAds;
@@ -75,7 +81,6 @@ const AdvertsPage = ({ onLogout }) => {
   });
 
   return (
-    
     <Layout onLogout={onLogout}>
       {/* <div className='photoSlide'>
       <section class="slideshow">
@@ -149,17 +154,17 @@ const AdvertsPage = ({ onLogout }) => {
           </div>
         )}
       </div>
-      <div className='botoneraAds'>
-        
+      <div className="botoneraAds">
         <Button onClick={prevAds} disabled={isCompleted}>
-          {("ver menos instrumentos ")}
+          {'Ver menos'}
         </Button>
         <Button onClick={nextAds} disabled={isCompleted}>
-        {("ver mas instrumentos ")}
-        </Button> 
-        
+          {'Ver más'}
+        </Button>
       </div>
-      <strong>{visible} de {moreAds}</strong>
+      <strong>
+        {visible} de {moreAds}
+      </strong>
     </Layout>
   );
 };
