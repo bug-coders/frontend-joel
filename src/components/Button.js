@@ -8,7 +8,16 @@ const Button = styled.button`
     props.variant === "primary" ? accentColor : "white"};
   border-radius: 6px;
   border-color: white;
-  background-color: rgba(255, 255, 255, 0.788);
+  background: rgb(126, 54, 2);
+  background: linear-gradient(
+    90deg,
+    rgb(126, 88, 61) 0%,
+    rgb(173, 127, 66) 22%,
+    rgb(238, 177, 65) 40%,
+    rgba(255, 145, 0, 0.541) 52%,
+    rgba(238, 177, 65) 72%,
+    rgba(126, 88, 61) 100%
+  );
   box-shadow: 1px -1px 1px rgba(97, 39, 6, 0.233), -1px 1px 1px rgba(97, 39, 6, 0.575);
   text-decoration: none;
   color: ${(props) => (props.variant === "primary" ? "white" : accentColor)};
@@ -33,10 +42,16 @@ const Button = styled.button`
   color: black !important;
   
   &:hover {
-    background-color: ${(props) =>
-      props.variant === "primary"
-        ? "rgb(26, 145, 218)"
-        : "rgba(97, 39, 6, 0.233)"};
+    background: rgb(126, 54, 2);
+  background: linear-gradient(
+    90deg,
+    rgb(126, 88, 61) 0%,
+    rgb(185, 153, 110) 22%,
+    rgb(255, 202, 102) 40%,
+    rgba(255, 184, 91, 0.541) 52%,
+    rgb(255, 202, 102) 72%,
+    rgba(126, 88, 61) 100%
+  );
   }
 `;
 

@@ -28,19 +28,20 @@ const Layout = ({ children, onLogout, ...props }) => {
         </div>
         <div className="header-navbar">
           <NavLink className="navlinks" to="/adverts" end>
-            Listado de Anuncios
+            | Listado de Anuncios |
           </NavLink>
           <NavLink className="navlinks" to="/adverts/new">
-            Crear Anuncio
+            | Crear Anuncio |
           </NavLink>
         </div>
         {!isLogged && (
-          <div>
+          <div className='buttonLogNav'>
             <NavLink to="/registrar" className="navlinks">
-              Registrarse
+              <Button>Registrarse</Button>
+              
             </NavLink>
             <NavLink to="/login" className="navlinks">
-              Login
+            <Button>Login</Button>
             </NavLink>
           </div>
         )}

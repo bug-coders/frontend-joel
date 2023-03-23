@@ -66,9 +66,10 @@ ul {
 }
 
 .photo-container-lista {
-  width: 210px;
+  width: auto;
   height: 185px;
   overflow: hidden;
+  margin: 0px 5px 0px 5px;
 }
 
 .delete-button {
