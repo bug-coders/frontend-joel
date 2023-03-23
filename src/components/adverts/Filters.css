@@ -1,5 +1,6 @@
 .adverts-filters-container {
   width: 100%;
+  max-width: 650px;
   height: auto;
   border-radius: 5px;
   background: linear-gradient(
