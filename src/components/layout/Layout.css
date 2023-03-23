@@ -136,7 +136,7 @@ body {
 }
 
 .navlinks:hover {
-  color: rgb(255, 255, 255);
+  color: rgb(126, 54, 2);
   font-weight: bold;
   transition: all 0.25s linear;
 }

@@ -161,7 +161,7 @@ ul {
   }
 } */
 
-@media screen and (min-width: 1193px) {
+@media screen and (min-width: 930px) {
   .adsGrid {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
@@ -170,18 +170,28 @@ ul {
   }
 }
 
-/* @media screen and (min-width: 1470px) {
+@media screen and (min-width: 1187px) {
   .adsGrid {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
   }
-} */
+}
 
-@media screen and (min-width: 1193px) {
+@media screen and (min-width: 1485px) {
   .adsGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3px;
+    padding: 3px;
+    margin: 0px;
+  }
+
+}
+
+@media screen and (min-width: 1770px) {
+  .adsGrid {
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 3px;
     padding: 3px;
     margin: 0px;
